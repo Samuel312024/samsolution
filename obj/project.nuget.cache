@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "mM7miZEdpMI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Samuel\\source\\repos\\samsolution\\samsolution.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Samuel\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
+    "C:\\Users\\Samuel\\.nuget\\packages\\mailkit\\4.15.0\\mailkit.4.15.0.nupkg.sha512",
+    "C:\\Users\\Samuel\\.nuget\\packages\\mimekit\\4.15.0\\mimekit.4.15.0.nupkg.sha512",
+    "C:\\Users\\Samuel\\.nuget\\packages\\system.formats.asn1\\8.0.1\\system.formats.asn1.8.0.1.nupkg.sha512",
+    "C:\\Users\\Samuel\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
