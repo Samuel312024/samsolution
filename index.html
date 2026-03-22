@@ -2,190 +2,153 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SAM SOLUTION | Assistência Técnica em Vinhedo e Região</title>
+
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ICONES -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=SEU_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-E17CGRFC2B');
+
+      function trackClick(nome) {
+        gtag('event', nome, {
+            event_category: 'interacao',
+            event_label: nome
+        });
+      }
+    </script>
+
+    <!-- ANIMAÇÕES -->
+    <style>
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 25px rgba(59,130,246,0.4);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-950 text-white font-sans scroll-smooth">
 
     <!-- BOTÃO WHATSAPP -->
     <a href="https://wa.me/5519986093543"
-       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-lg text-lg font-semibold z-50">
-        💬 WhatsApp
+       onclick="trackClick('whatsapp_fixo')"
+       class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 px-5 py-3 rounded-full shadow-lg text-lg z-50 transition hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- HERO -->
-    <section class="relative bg-gradient-to-b from-black via-gray-900 to-gray-950 py-28 text-center overflow-hidden">
-        <div class="absolute inset-0 bg-blue-600 opacity-10 blur-3xl"></div>
+    <section class="relative py-28 text-center">
+        <div class="fade-up">
+            <img src="images/samsolution.jpg" class="w-32 md:w-44 mx-auto mb-6">
 
-        <div class="relative z-10">
-            <div class="flex justify-center mb-8">
-                <img src="images/samsolution.jpg"
-                     class="w-44 h-44 object-contain drop-shadow-2xl">
-            </div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">SAM SOLUTION</h1>
 
-            <p class="text-xl text-blue-400 mb-6 font-light">
-                Soluções em Tecnologias
+            <p class="text-blue-400 mb-4">Soluções em Tecnologias</p>
+
+            <p class="text-gray-400 max-w-xl mx-auto mb-6">
+                Assistência técnica profissional com atendimento rápido em Vinhedo e região.
             </p>
 
-            <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-6">
-                Assistência Técnica especializada em computadores, notebooks e PCs gamer.
-                Atendimento profissional em domicílio em Vinhedo e Região.
-            </p>
-
-            <p class="text-sm text-gray-500 mb-8">
-                ✔ Atendimento rápido | ✔ Profissional qualificado | ✔ Garantia de serviço
-            </p>
-
-            <div class="flex justify-center gap-6 flex-wrap">
+            <div class="flex justify-center gap-4 flex-wrap">
                 <a href="https://wa.me/5519986093543"
-                   class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition">
-                    📲 WhatsApp
+                   onclick="trackClick('whatsapp_hero')"
+                   class="bg-green-500 px-6 py-3 rounded-xl hover:scale-105 transition">
+                   <i class="fa-brands fa-whatsapp"></i> WhatsApp
                 </a>
 
                 <a href="mailto:samsolution.150824@gmail.com"
-                   class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl text-lg font-semibold shadow-lg transition">
-                    ✉ Enviar E-mail
+                   onclick="trackClick('email_hero')"
+                   class="bg-blue-600 px-6 py-3 rounded-xl hover:scale-105 transition">
+                   <i class="fa-solid fa-envelope"></i> E-mail
                 </a>
             </div>
         </div>
     </section>
 
     <!-- SERVIÇOS -->
-    <section class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">Nossos Serviços</h2>
+    <section class="py-20 px-4">
+        <h2 class="text-2xl md:text-3xl text-center mb-10 fade-up">Serviços</h2>
 
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-                    <h3 class="text-xl font-semibold mb-4">🎮 Manutenção de PC Gamer</h3>
-                    <p class="text-gray-400">Instalação, upgrade e otimização para alto desempenho.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-                    <h3 class="text-xl font-semibold mb-4">💼 PCs e Notebooks</h3>
-                    <p class="text-gray-400">Manutenção preventiva e corretiva para uso residencial e empresarial.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-                    <h3 class="text-xl font-semibold mb-4">⚙ Atualização de Hardware e Software</h3>
-                    <p class="text-gray-400">
-                        Upgrade de hardware, formatação, instalação de sistemas operacionais
-                        e softwares essenciais.
-                    </p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-                    <h3 class="text-xl font-semibold mb-4">🧹 Limpeza Técnica</h3>
-                    <p class="text-gray-400">Limpeza interna completa para melhor desempenho.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-                    <h3 class="text-xl font-semibold mb-4">🌐 Suporte Remoto</h3>
-                    <p class="text-gray-400">Atendimento online rápido sem sair de casa.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-                    <h3 class="text-xl font-semibold mb-4">🔒 Segurança Digital</h3>
-                    <p class="text-gray-400">Remoção de vírus e proteção do sistema.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-                    <h3 class="text-xl font-semibold mb-4">📡 Redes e Wi-Fi</h3>
-                    <p class="text-gray-400">Configuração de roteadores e redes.</p>
-                </div>
-
-                <div class="bg-gray-900 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-                    <h3 class="text-xl font-semibold mb-4">💾 Backup e Recuperação</h3>
-                    <p class="text-gray-400">Proteção e recuperação de dados.</p>
-                </div>
-
-            </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up">🎮 PC Gamer</div>
+            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up">💻 Notebooks</div>
+            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up">⚙ Formatação</div>
+            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up">🌐 Suporte Remoto</div>
+            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up">🔒 Segurança</div>
+            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up">📡 Redes</div>
         </div>
-    </section>
-
-    <!-- DIFERENCIAIS -->
-    <section class="py-20 bg-gray-900">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12">Por que escolher a SAM SOLUTION?</h2>
-
-            <div class="grid md:grid-cols-3 gap-10">
-                <div>
-                    <h3 class="text-xl font-semibold mb-3">⚡ Atendimento Rápido</h3>
-                    <p class="text-gray-400">Agilidade no atendimento.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold mb-3">🏠 Atendimento em Domicílio</h3>
-                    <p class="text-gray-400">Vamos até você.</p>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold mb-3">💰 Preço Justo</h3>
-                    <p class="text-gray-400">Qualidade com preço acessível.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ÁREA -->
-    <section class="py-20 bg-gray-800 text-center">
-        <h2 class="text-3xl font-bold mb-8">Área de Atendimento</h2>
-        <p class="text-lg text-gray-400 max-w-3xl mx-auto">
-            Vinhedo, Valinhos, Louveira, Campinas e Itatiba.
-        </p>
     </section>
 
     <!-- CTA -->
-    <section class="py-16 text-center bg-blue-600">
-        <h2 class="text-3xl font-bold mb-6">Precisa de ajuda agora?</h2>
-        <p class="mb-6 text-lg">Fale conosco e resolva rapidamente.</p>
-
+    <section class="py-16 text-center bg-blue-600 fade-up">
+        <h2 class="text-2xl mb-4">Precisa de ajuda?</h2>
         <a href="https://wa.me/5519986093543"
-           class="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold shadow-lg hover:scale-105 transition">
-            💬 Falar no WhatsApp
+           onclick="trackClick('cta_whatsapp')"
+           class="bg-white text-blue-600 px-8 py-4 rounded-xl">
+           Falar no WhatsApp
         </a>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black text-gray-400 py-10">
-        <div class="max-w-6xl mx-auto px-6 text-center">
+    <footer class="py-10 text-center">
+        <div class="flex justify-center gap-6 mb-6">
 
-            <div class="flex justify-center gap-8 text-lg mb-6 flex-wrap">
-                <div class="flex justify-center gap-8 text-lg mb-6 flex-wrap">
+            <a href="https://www.linkedin.com/company/sam-solutions-technology"
+               onclick="trackClick('linkedin')">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
 
-                <a href="https://www.linkedin.com/company/sam-solutions-technology"
-                class="hover:text-blue-400 transition flex items-center gap-2">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
+            <a href="https://wa.me/5519986093543"
+               onclick="trackClick('whatsapp_footer')">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
 
-                <a href="https://wa.me/5519986093543"
-                class="hover:text-green-500 transition flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
-
-                <a href="mailto:samsolution.150824@gmail.com"
-                class="hover:text-blue-300 transition flex items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i> E-mail
-                </a>
-
-            </div>
-
-            </div>
-
-           <p class="text-sm text-gray-600">
-            © <span id="ano"></span> SAM SOLUTION - Todos os direitos reservados
-            </p>
-
-            <script>
-                document.getElementById("ano").textContent = new Date().getFullYear();
-            </script>
+            <a href="mailto:samsolution.150824@gmail.com"
+               onclick="trackClick('email_footer')">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
 
         </div>
+
+        <p class="text-sm text-gray-600">
+            © <span id="ano"></span> SAM SOLUTION
+        </p>
     </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // ANIMAÇÃO
+        const elements = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+        elements.forEach(el => observer.observe(el));
+
+        // ANO AUTOMÁTICO
+        document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
