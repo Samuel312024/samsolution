@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("samsolution")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+735869af7266e5a469c9178911f447c3ae892b96")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3cb9f3d96b750fdb285c2e55d6e656355a564cd5")]
 [assembly: System.Reflection.AssemblyProductAttribute("samsolution")]
 [assembly: System.Reflection.AssemblyTitleAttribute("samsolution")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
