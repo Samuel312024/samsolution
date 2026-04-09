@@ -148,6 +148,16 @@
             text-transform: uppercase;
             color: #e2e8f0;
             backdrop-filter: blur(16px);
+            white-space: nowrap;
+            max-width: calc(100% - 2rem);
+        }
+
+        .carousel-zoom-label-mobile {
+            display: none;
+        }
+
+        .carousel-controls {
+            pointer-events: none;
         }
 
         .carousel-arrow {
@@ -158,6 +168,7 @@
             background: rgba(15, 23, 42, 0.66);
             color: #fff;
             transition: all 0.2s ease;
+            pointer-events: auto;
         }
 
         .carousel-arrow:hover,
@@ -255,10 +266,20 @@
             }
 
             .carousel-zoom {
-                right: 0.75rem;
-                bottom: 0.75rem;
-                font-size: 0.62rem;
-                padding: 0.45rem 0.7rem;
+                right: 0.6rem;
+                bottom: 0.6rem;
+                font-size: 0.58rem;
+                letter-spacing: 0.04em;
+                padding: 0.42rem 0.62rem;
+                max-width: calc(100% - 1.2rem);
+            }
+
+            .carousel-zoom-label {
+                display: none;
+            }
+
+            .carousel-zoom-label-mobile {
+                display: inline;
             }
         }
     </style>
@@ -306,7 +327,7 @@
                             <div class="carousel-frame">
                                 <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Controle de SLA" data-image-src="@Url.Content("~/images/portfolio-sla.png")" data-image-alt="Painel de controle de SLA" data-download-name="portfolio-sla.png" aria-label="Ampliar painel de controle de SLA">
                                     <img class="carousel-image" src="@Url.Content("~/images/portfolio-sla.png")" alt="Painel de controle de SLA">
-                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
@@ -314,7 +335,7 @@
                             <div class="carousel-frame">
                                 <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Service Desk Operacional" data-image-src="@Url.Content("~/images/portfolio-service-desk.png")" data-image-alt="Painel de service desk operacional" data-download-name="portfolio-service-desk.png" aria-label="Ampliar painel de service desk operacional">
                                     <img class="carousel-image" src="@Url.Content("~/images/portfolio-service-desk.png")" alt="Painel de service desk operacional">
-                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
@@ -322,7 +343,7 @@
                             <div class="carousel-frame">
                                 <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Tickets em risco ou violados" data-image-src="@Url.Content("~/images/portfolio-tickets-risco.png")" data-image-alt="Painel de tickets em risco ou violados" data-download-name="portfolio-tickets-risco.png" aria-label="Ampliar painel de tickets em risco ou violados">
                                     <img class="carousel-image" src="@Url.Content("~/images/portfolio-tickets-risco.png")" alt="Painel de tickets em risco ou violados">
-                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
@@ -330,7 +351,7 @@
                             <div class="carousel-frame">
                                 <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="SOC Command Center" data-image-src="@Url.Content("~/images/portfolio-soc-command-center.png")" data-image-alt="Painel SOC Command Center com defesa, telemetria e resposta" data-download-name="portfolio-soc-command-center.png" aria-label="Ampliar painel SOC Command Center">
                                     <img class="carousel-image" src="@Url.Content("~/images/portfolio-soc-command-center.png")" alt="Painel SOC Command Center com defesa, telemetria e resposta">
-                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
@@ -338,7 +359,7 @@
                             <div class="carousel-frame">
                                 <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Monitoramento e incidentes" data-image-src="@Url.Content("~/images/portfolio-monitoramento-incidentes.png")" data-image-alt="Painel de monitoramento e incidentes em tempo real" data-download-name="portfolio-monitoramento-incidentes.png" aria-label="Ampliar painel de monitoramento e incidentes">
                                     <img class="carousel-image" src="@Url.Content("~/images/portfolio-monitoramento-incidentes.png")" alt="Painel de monitoramento e incidentes em tempo real">
-                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
@@ -346,13 +367,13 @@
                             <div class="carousel-frame">
                                 <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Catálogo de serviços" data-image-src="@Url.Content("~/images/portfolio-catalogo-servicos.png")" data-image-alt="Catálogo de serviços de TI com pacotes operacionais" data-download-name="portfolio-catalogo-servicos.png" aria-label="Ampliar catálogo de serviços">
                                     <img class="carousel-image" src="@Url.Content("~/images/portfolio-catalogo-servicos.png")" alt="Catálogo de serviços de TI com pacotes operacionais">
-                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
                     </div>
 
-                    <div class="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-3 md:px-4">
+                    <div class="carousel-controls absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-3 md:px-4">
                         <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Ver slide anterior">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
