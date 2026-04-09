@@ -98,39 +98,21 @@
         }
 
         .carousel-slide::after {
-            content: "";
-            position: absolute;
-            inset: auto 0 0;
-            height: 35%;
-            background: linear-gradient(180deg, rgba(2, 6, 23, 0) 0%, rgba(2, 6, 23, 0.74) 100%);
-            pointer-events: none;
+            display: none;
         }
 
         .carousel-frame {
             position: relative;
-            aspect-ratio: 16 / 10;
-            min-height: 280px;
+            aspect-ratio: 16 / 8.2;
+            min-height: 340px;
             background: linear-gradient(145deg, rgba(15, 23, 42, 0.85), rgba(2, 6, 23, 1));
         }
 
-        .carousel-canvas {
+        .carousel-image {
             display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .carousel-loader {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background:
-                linear-gradient(110deg, rgba(30, 41, 59, 0.82) 8%, rgba(51, 65, 85, 0.92) 18%, rgba(30, 41, 59, 0.82) 33%);
-            background-size: 200% 100%;
-            animation: shimmer 1.6s linear infinite;
-            color: #e2e8f0;
         }
 
         .carousel-arrow {
@@ -170,11 +152,6 @@
             border: 1px solid rgba(96, 165, 250, 0.14);
         }
 
-        @@keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
         @@media (max-width: 768px) {
             .carousel-frame {
                 min-height: 220px;
@@ -195,146 +172,109 @@
     </a>
 
     <section class="relative px-4 pt-10 pb-24">
-        <div class="max-w-7xl mx-auto relative z-10">
+        <div class="mx-auto relative z-10 max-w-[98rem]">
             <div class="fade-up glass-panel rounded-[32px] p-4 md:p-6 lg:p-8">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <div class="inline-flex items-center gap-3 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-xs uppercase tracking-[0.32em] text-sky-200">
                         <span class="inline-block h-2.5 w-2.5 rounded-full bg-sky-400"></span>
                         Portfólio IT Management
                     </div>
-                    <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs text-slate-300">
-                        <i class="fa-regular fa-images text-sky-300"></i>
-                        3 visões reais do fluxo operacional
+                    <div class="flex flex-wrap items-center gap-3">
+                        <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs text-slate-300">
+                            <i class="fa-regular fa-images text-sky-300"></i>
+                            3 visões reais do fluxo operacional
+                        </div>
+                        <a href="@Url.Content("~/images/it-management.pdf")" download class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
+                            <i class="fa-solid fa-download"></i>
+                            Baixar PDF
+                        </a>
                     </div>
                 </div>
 
-                <div class="grid gap-6 lg:grid-cols-[minmax(0,1.25fr)_300px]">
-                    <div>
-                        <div class="carousel-shell" data-carousel-root>
-                            <div class="absolute left-4 top-4 z-20 inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-xs text-slate-200">
-                                <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-                                Demonstração visual do ambiente
-                            </div>
-
-                            <div class="carousel-track" data-carousel-track>
-                                <article class="carousel-slide" data-carousel-slide data-page="1" aria-hidden="false">
-                                    <div class="carousel-frame">
-                                        <canvas class="carousel-canvas" aria-label="Tela de controle de SLA"></canvas>
-                                        <div class="carousel-loader" data-carousel-loader>
-                                            <div class="text-center px-6">
-                                                <p class="text-lg font-semibold">Carregando tela 1</p>
-                                                <p class="mt-2 text-sm text-slate-300">Renderizando a prévia do PDF para o carrossel.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-
-                                <article class="carousel-slide" data-carousel-slide data-page="2" aria-hidden="true">
-                                    <div class="carousel-frame">
-                                        <canvas class="carousel-canvas" aria-label="Tela de service desk operacional"></canvas>
-                                        <div class="carousel-loader" data-carousel-loader>
-                                            <div class="text-center px-6">
-                                                <p class="text-lg font-semibold">Carregando tela 2</p>
-                                                <p class="mt-2 text-sm text-slate-300">Organizando a fila visual de chamados.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-
-                                <article class="carousel-slide" data-carousel-slide data-page="3" aria-hidden="true">
-                                    <div class="carousel-frame">
-                                        <canvas class="carousel-canvas" aria-label="Tela de tickets em risco ou violados"></canvas>
-                                        <div class="carousel-loader" data-carousel-loader>
-                                            <div class="text-center px-6">
-                                                <p class="text-lg font-semibold">Carregando tela 3</p>
-                                                <p class="mt-2 text-sm text-slate-300">Preparando a visão priorizada de tickets.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-4 p-4 md:p-6">
-                                <div class="max-w-xl">
-                                    <p class="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-sky-200/90">Preview em destaque</p>
-                                    <h2 class="text-2xl md:text-3xl font-bold" data-carousel-title>Controle de SLA</h2>
-                                    <p class="mt-2 text-sm md:text-base text-slate-200/90" data-carousel-description>
-                                        Conformidade, filas críticas e métricas em tempo real para priorizar atendimentos.
-                                    </p>
-                                </div>
-                                <div class="hidden sm:inline-flex items-center rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-sm text-slate-200">
-                                    <span data-carousel-counter>01</span>
-                                    <span class="mx-2 text-slate-500">/</span>
-                                    03
-                                </div>
-                            </div>
-
-                            <div class="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-3 md:px-4">
-                                <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Ver slide anterior">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </button>
-                                <button type="button" class="carousel-arrow" data-carousel-next aria-label="Ver próximo slide">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                            <div class="flex flex-wrap items-center gap-3 text-sm text-slate-300">
-                                <span class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/60 px-4 py-2">
-                                    <i class="fa-regular fa-file-lines text-sky-300"></i>
-                                    Paginação puxada do PDF enviado
-                                </span>
-                                <span class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/60 px-4 py-2">
-                                    <i class="fa-solid fa-rotate text-sky-300"></i>
-                                    Troca automática de slides
-                                </span>
-                            </div>
-
-                            <div class="flex items-center justify-center gap-3" data-carousel-dots>
-                                <button type="button" class="carousel-dot is-active" data-carousel-dot="0" aria-label="Ir para o slide 1"></button>
-                                <button type="button" class="carousel-dot" data-carousel-dot="1" aria-label="Ir para o slide 2"></button>
-                                <button type="button" class="carousel-dot" data-carousel-dot="2" aria-label="Ir para o slide 3"></button>
-                            </div>
-                        </div>
+                <div class="carousel-shell mt-5 -mx-4 w-auto md:-mx-6 lg:-mx-8" data-carousel-root>
+                    <div class="absolute left-4 top-4 z-20 inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-xs text-slate-200">
+                        <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                        Demonstração visual do ambiente
                     </div>
 
-                    <aside class="grid gap-4">
-                        <div class="metric-card rounded-[28px] p-5">
-                            <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Destaques</p>
-                            <div class="mt-5 grid gap-3">
-                                <div class="rounded-2xl border border-slate-800 bg-slate-950/65 p-4">
-                                    <p class="text-3xl font-bold text-sky-300">24/7</p>
-                                    <p class="mt-2 text-sm text-slate-300">Visual de operação para incidentes, backlog e prazos sensíveis.</p>
-                                </div>
-                                <div class="rounded-2xl border border-slate-800 bg-slate-950/65 p-4">
-                                    <p class="text-3xl font-bold text-sky-300">3 telas</p>
-                                    <p class="mt-2 text-sm text-slate-300">Controle de SLA, service desk e tickets em risco em um carrossel único.</p>
-                                </div>
+                    <div class="carousel-track" data-carousel-track>
+                        <article class="carousel-slide" data-carousel-slide aria-hidden="false">
+                            <div class="carousel-frame">
+                                <img class="carousel-image" src="@Url.Content("~/images/portfolio-sla.png")" alt="Painel de controle de SLA">
                             </div>
-                        </div>
+                        </article>
+                        <article class="carousel-slide" data-carousel-slide aria-hidden="true">
+                            <div class="carousel-frame">
+                                <img class="carousel-image" src="@Url.Content("~/images/portfolio-service-desk.png")" alt="Painel de service desk operacional">
+                            </div>
+                        </article>
+                        <article class="carousel-slide" data-carousel-slide aria-hidden="true">
+                            <div class="carousel-frame">
+                                <img class="carousel-image" src="@Url.Content("~/images/portfolio-tickets-risco.png")" alt="Painel de tickets em risco ou violados">
+                            </div>
+                        </article>
+                    </div>
 
-                        <div class="metric-card rounded-[28px] p-5">
-                            <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Aplicação</p>
-                            <ul class="mt-4 space-y-3 text-sm text-slate-300">
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                    Serve para apresentar maturidade operacional logo na primeira dobra do site.
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                    Ajuda a vender service desk, monitoramento e atendimento com SLA.
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                    Mantém o resto do conteúdo comercial logo abaixo do carrossel.
-                                </li>
-                            </ul>
+                    <div class="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-3 md:px-4">
+                        <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Ver slide anterior">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button type="button" class="carousel-arrow" data-carousel-next aria-label="Ver próximo slide">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+                    <div class="max-w-3xl">
+                        <p class="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-sky-200/90">Preview em destaque</p>
+                        <h2 class="text-2xl md:text-3xl font-bold" data-carousel-title>Controle de SLA</h2>
+                        <p class="mt-2 text-sm md:text-base text-slate-200/90" data-carousel-description>
+                            Conformidade, filas críticas e métricas em tempo real para priorizar atendimentos.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-start gap-4 xl:items-end">
+                        <div class="inline-flex items-center rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-sm text-slate-200">
+                            <span data-carousel-counter>01</span>
+                            <span class="mx-2 text-slate-500">/</span>
+                            03
                         </div>
-                    </aside>
+                        <div class="flex items-center justify-center gap-3" data-carousel-dots>
+                            <button type="button" class="carousel-dot is-active" data-carousel-dot="0" aria-label="Ir para o slide 1"></button>
+                            <button type="button" class="carousel-dot" data-carousel-dot="1" aria-label="Ir para o slide 2"></button>
+                            <button type="button" class="carousel-dot" data-carousel-dot="2" aria-label="Ir para o slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                    <div class="metric-card rounded-[28px] p-5">
+                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Destaques</p>
+                        <p class="mt-5 text-4xl font-bold text-sky-300">24/7</p>
+                        <p class="mt-3 text-sm text-slate-300">Visual de operação para incidentes, backlog e prazos sensíveis.</p>
+                    </div>
+                    <div class="metric-card rounded-[28px] p-5">
+                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Cobertura</p>
+                        <p class="mt-5 text-4xl font-bold text-sky-300">3 telas</p>
+                        <p class="mt-3 text-sm text-slate-300">Controle de SLA, service desk e tickets em risco em um carrossel único.</p>
+                    </div>
+                    <div class="metric-card rounded-[28px] p-5">
+                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Aplicação</p>
+                        <p class="mt-5 text-sm leading-7 text-slate-300">Serve para apresentar maturidade operacional logo na primeira dobra e reforçar monitoramento, atendimento e gestão com SLA.</p>
+                    </div>
+                    <div class="metric-card rounded-[28px] p-5">
+                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Material Completo</p>
+                        <p class="mt-5 text-sm leading-7 text-slate-300">O PDF fica separado só para download, sem passar dentro do carrossel.</p>
+                        <a href="@Url.Content("~/images/it-management.pdf")" download class="mt-5 inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-4 py-3 font-semibold text-white shadow-lg shadow-emerald-950/40">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Baixar apresentação
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
 
+        <div class="max-w-7xl mx-auto relative z-10">
             <div class="fade-up mt-14 text-center">
                 <img src="~/images/samsolution.jpg" alt="Logo da SAM SOLUTION" class="w-28 md:w-40 mx-auto mb-6 rounded-[28px] border border-sky-400/15 shadow-xl shadow-sky-950/30">
                 <p class="text-sky-300 mb-3 uppercase tracking-[0.38em] text-xs md:text-sm">SAM SOLUTION</p>
@@ -502,30 +442,22 @@
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
 
-    <script type="module">
-        import * as pdfjsLib from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs';
-
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs';
-
+    <script>
         const slideDetails = [
             {
-                page: 1,
                 title: 'Controle de SLA',
                 description: 'Conformidade, filas críticas e métricas em tempo real para priorizar atendimentos.'
             },
             {
-                page: 2,
                 title: 'Service Desk Operacional',
                 description: 'Fila de chamados com filtros, exportação e leitura rápida do backlog.'
             },
             {
-                page: 3,
                 title: 'Tickets em risco ou violados',
                 description: 'Visão tática para agir antes do estouro do prazo e equilibrar a operação.'
             }
         ];
 
-        const pdfUrl = '@Url.Content("~/images/it-management.pdf")';
         const carouselRoot = document.querySelector('[data-carousel-root]');
         const track = document.querySelector('[data-carousel-track]');
         const slides = Array.from(document.querySelectorAll('[data-carousel-slide]'));
@@ -538,8 +470,6 @@
 
         let currentSlide = 0;
         let autoplayId = null;
-        let pdfDocument = null;
-        let renderQueue = Promise.resolve();
 
         function setActiveSlide(index) {
             currentSlide = (index + slides.length) % slides.length;
@@ -579,77 +509,6 @@
             startAutoplay();
         }
 
-        async function renderSlide(pageNumber, canvas) {
-            if (!pdfDocument) {
-                return;
-            }
-
-            const targetWidth = Math.max(Math.round(canvas.parentElement.clientWidth), 320);
-            const lastWidth = Number(canvas.dataset.renderWidth || 0);
-
-            if (Math.abs(targetWidth - lastWidth) < 24) {
-                return;
-            }
-
-            const page = await pdfDocument.getPage(pageNumber);
-            const baseViewport = page.getViewport({ scale: 1 });
-            const scale = targetWidth / baseViewport.width;
-            const viewport = page.getViewport({ scale });
-            const outputScale = Math.min(window.devicePixelRatio || 1, 2);
-            const context = canvas.getContext('2d');
-
-            canvas.width = Math.floor(viewport.width * outputScale);
-            canvas.height = Math.floor(viewport.height * outputScale);
-            canvas.style.width = `${viewport.width}px`;
-            canvas.style.height = `${viewport.height}px`;
-            canvas.dataset.renderWidth = String(targetWidth);
-
-            context.setTransform(outputScale, 0, 0, outputScale, 0, 0);
-            context.clearRect(0, 0, viewport.width, viewport.height);
-
-            await page.render({
-                canvasContext: context,
-                viewport
-            }).promise;
-        }
-
-        function queueRenderSlides() {
-            renderQueue = renderQueue.then(async () => {
-                for (const slide of slides) {
-                    const canvas = slide.querySelector('canvas');
-                    const loader = slide.querySelector('[data-carousel-loader]');
-                    await renderSlide(Number(slide.dataset.page), canvas);
-                    if (loader) {
-                        loader.remove();
-                    }
-                }
-            }).catch(error => {
-                console.error(error);
-            });
-
-            return renderQueue;
-        }
-
-        async function loadPdfSlides() {
-            try {
-                pdfDocument = await pdfjsLib.getDocument(pdfUrl).promise;
-                await queueRenderSlides();
-            } catch (error) {
-                slides.forEach(slide => {
-                    const loader = slide.querySelector('[data-carousel-loader]');
-                    if (loader) {
-                        loader.innerHTML = `
-                            <div class="text-center px-6">
-                                <p class="text-lg font-semibold">Prévia indisponível</p>
-                                <p class="mt-2 text-sm text-slate-300">Não foi possível carregar o PDF neste momento.</p>
-                            </div>
-                        `;
-                    }
-                });
-                console.error(error);
-            }
-        }
-
         prevButton.addEventListener('click', () => {
             setActiveSlide(currentSlide - 1);
             restartAutoplay();
@@ -672,21 +531,8 @@
         carouselRoot.addEventListener('focusin', stopAutoplay);
         carouselRoot.addEventListener('focusout', startAutoplay);
 
-        let resizeTimer = null;
-        window.addEventListener('resize', () => {
-            if (!pdfDocument) {
-                return;
-            }
-
-            window.clearTimeout(resizeTimer);
-            resizeTimer = window.setTimeout(() => {
-                queueRenderSlides();
-            }, 220);
-        });
-
         setActiveSlide(0);
         startAutoplay();
-        loadPdfSlides();
     </script>
 </body>
 </html>
