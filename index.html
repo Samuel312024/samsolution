@@ -115,6 +115,41 @@
             object-fit: cover;
         }
 
+        .carousel-shot {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: zoom-in;
+        }
+
+        .carousel-shot:focus-visible {
+            outline: 3px solid rgba(96, 165, 250, 0.92);
+            outline-offset: -3px;
+        }
+
+        .carousel-zoom {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            background: rgba(2, 6, 23, 0.72);
+            padding: 0.55rem 0.9rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #e2e8f0;
+            backdrop-filter: blur(16px);
+        }
+
         .carousel-arrow {
             width: 3rem;
             height: 3rem;
@@ -152,9 +187,78 @@
             border: 1px solid rgba(96, 165, 250, 0.14);
         }
 
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 70;
+            display: grid;
+            place-items: center;
+            padding: 1.25rem;
+            background: rgba(2, 6, 23, 0.84);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.18s ease, visibility 0.18s ease;
+        }
+
+        .lightbox.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-backdrop {
+            position: absolute;
+            inset: 0;
+            border: 0;
+            background: transparent;
+        }
+
+        .lightbox-panel {
+            position: relative;
+            z-index: 1;
+            width: min(96vw, 1500px);
+            max-height: 92vh;
+            overflow: hidden;
+            border-radius: 28px;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+            box-shadow: 0 40px 80px rgba(2, 6, 23, 0.55);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 2;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            background: rgba(15, 23, 42, 0.82);
+            color: #f8fafc;
+        }
+
+        .lightbox-image {
+            display: block;
+            width: 100%;
+            max-height: calc(92vh - 7rem);
+            object-fit: contain;
+            background: #020617;
+        }
+
         @media (max-width: 768px) {
             .carousel-frame {
                 min-height: 220px;
+            }
+
+            .carousel-zoom {
+                right: 0.75rem;
+                bottom: 0.75rem;
+                font-size: 0.62rem;
+                padding: 0.45rem 0.7rem;
             }
         }
     </style>
@@ -182,7 +286,7 @@
                     <div class="flex flex-wrap items-center gap-3">
                         <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs text-slate-300">
                             <i class="fa-regular fa-images text-sky-300"></i>
-                            3 visões reais do fluxo operacional
+                            6 visões reais do fluxo operacional
                         </div>
                         <a href="/images/it-management.pdf" download class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
                             <i class="fa-solid fa-download"></i>
@@ -198,19 +302,52 @@
                     </div>
 
                     <div class="carousel-track" data-carousel-track>
-                        <article class="carousel-slide" data-carousel-slide aria-hidden="false">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Controle de SLA" data-slide-description="Conformidade, filas críticas e métricas em tempo real para priorizar atendimentos." aria-hidden="false">
                             <div class="carousel-frame">
-                                <img class="carousel-image" src="/images/portfolio-sla.png" alt="Painel de controle de SLA">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Controle de SLA" data-image-src="/images/portfolio-sla.png" data-image-alt="Painel de controle de SLA" data-download-name="portfolio-sla.png" aria-label="Ampliar painel de controle de SLA">
+                                    <img class="carousel-image" src="/images/portfolio-sla.png" alt="Painel de controle de SLA">
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                </button>
                             </div>
                         </article>
-                        <article class="carousel-slide" data-carousel-slide aria-hidden="true">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Service Desk Operacional" data-slide-description="Fila de chamados com filtros, exportação e leitura rápida do backlog." aria-hidden="true">
                             <div class="carousel-frame">
-                                <img class="carousel-image" src="/images/portfolio-service-desk.png" alt="Painel de service desk operacional">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Service Desk Operacional" data-image-src="/images/portfolio-service-desk.png" data-image-alt="Painel de service desk operacional" data-download-name="portfolio-service-desk.png" aria-label="Ampliar painel de service desk operacional">
+                                    <img class="carousel-image" src="/images/portfolio-service-desk.png" alt="Painel de service desk operacional">
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                </button>
                             </div>
                         </article>
-                        <article class="carousel-slide" data-carousel-slide aria-hidden="true">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Tickets em risco ou violados" data-slide-description="Visão tática para agir antes do estouro do prazo e equilibrar a operação." aria-hidden="true">
                             <div class="carousel-frame">
-                                <img class="carousel-image" src="/images/portfolio-tickets-risco.png" alt="Painel de tickets em risco ou violados">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Tickets em risco ou violados" data-image-src="/images/portfolio-tickets-risco.png" data-image-alt="Painel de tickets em risco ou violados" data-download-name="portfolio-tickets-risco.png" aria-label="Ampliar painel de tickets em risco ou violados">
+                                    <img class="carousel-image" src="/images/portfolio-tickets-risco.png" alt="Painel de tickets em risco ou violados">
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                </button>
+                            </div>
+                        </article>
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="SOC Command Center" data-slide-description="Defesa, telemetria e resposta com fila prioritária e leitura rápida do ambiente." aria-hidden="true">
+                            <div class="carousel-frame">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="SOC Command Center" data-image-src="/images/portfolio-soc-command-center.png" data-image-alt="Painel SOC Command Center com defesa, telemetria e resposta" data-download-name="portfolio-soc-command-center.png" aria-label="Ampliar painel SOC Command Center">
+                                    <img class="carousel-image" src="/images/portfolio-soc-command-center.png" alt="Painel SOC Command Center com defesa, telemetria e resposta">
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                </button>
+                            </div>
+                        </article>
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Monitoramento e incidentes" data-slide-description="Painel executivo com ativos, incidentes, serviços e leitura operacional em tempo real." aria-hidden="true">
+                            <div class="carousel-frame">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Monitoramento e incidentes" data-image-src="/images/portfolio-monitoramento-incidentes.png" data-image-alt="Painel de monitoramento e incidentes em tempo real" data-download-name="portfolio-monitoramento-incidentes.png" aria-label="Ampliar painel de monitoramento e incidentes">
+                                    <img class="carousel-image" src="/images/portfolio-monitoramento-incidentes.png" alt="Painel de monitoramento e incidentes em tempo real">
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                </button>
+                            </div>
+                        </article>
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Catálogo de serviços" data-slide-description="Pacotes operacionais com escopo, janela e SLA definidos para apresentação comercial." aria-hidden="true">
+                            <div class="carousel-frame">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Catálogo de serviços" data-image-src="/images/portfolio-catalogo-servicos.png" data-image-alt="Catálogo de serviços de TI com pacotes operacionais" data-download-name="portfolio-catalogo-servicos.png" aria-label="Ampliar catálogo de serviços">
+                                    <img class="carousel-image" src="/images/portfolio-catalogo-servicos.png" alt="Catálogo de serviços de TI com pacotes operacionais">
+                                    <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> Clique para ampliar</span>
+                                </button>
                             </div>
                         </article>
                     </div>
@@ -237,13 +374,9 @@
                         <div class="inline-flex items-center rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-sm text-slate-200">
                             <span data-carousel-counter>01</span>
                             <span class="mx-2 text-slate-500">/</span>
-                            03
+                            <span data-carousel-total>06</span>
                         </div>
-                        <div class="flex items-center justify-center gap-3" data-carousel-dots>
-                            <button type="button" class="carousel-dot is-active" data-carousel-dot="0" aria-label="Ir para o slide 1"></button>
-                            <button type="button" class="carousel-dot" data-carousel-dot="1" aria-label="Ir para o slide 2"></button>
-                            <button type="button" class="carousel-dot" data-carousel-dot="2" aria-label="Ir para o slide 3"></button>
-                        </div>
+                        <div class="flex items-center justify-center gap-3" data-carousel-dots></div>
                     </div>
                 </div>
 
@@ -255,8 +388,8 @@
                     </div>
                     <div class="metric-card rounded-[28px] p-5">
                         <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Cobertura</p>
-                        <p class="mt-5 text-4xl font-bold text-sky-300">3 telas</p>
-                        <p class="mt-3 text-sm text-slate-300">Controle de SLA, service desk e tickets em risco em um carrossel único.</p>
+                        <p class="mt-5 text-4xl font-bold text-sky-300">6 telas</p>
+                        <p class="mt-3 text-sm text-slate-300">SLA, service desk, tickets críticos, SOC, monitoramento e catálogo em um carrossel único.</p>
                     </div>
                     <div class="metric-card rounded-[28px] p-5">
                         <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Aplicação</p>
@@ -308,6 +441,26 @@
             </div>
         </div>
     </section>
+
+    <div class="lightbox" data-lightbox hidden aria-hidden="true">
+        <button type="button" class="lightbox-backdrop" data-lightbox-close aria-label="Fechar visualização ampliada"></button>
+        <div class="lightbox-panel">
+            <button type="button" class="lightbox-close" data-lightbox-close aria-label="Fechar visualização ampliada">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img class="lightbox-image" src="" alt="" data-lightbox-image>
+            <div class="flex flex-col gap-3 border-t border-white/10 px-5 py-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                    <p class="text-[0.68rem] uppercase tracking-[0.32em] text-sky-200/90">Visual ampliado</p>
+                    <h3 class="mt-1 text-lg font-semibold text-white" data-lightbox-title>Prévia do carrossel</h3>
+                </div>
+                <a href="#" data-lightbox-download download class="inline-flex items-center gap-2 rounded-2xl bg-sky-500 px-4 py-3 font-semibold text-slate-950">
+                    <i class="fa-solid fa-download"></i>
+                    Baixar imagem
+                </a>
+            </div>
+        </div>
+    </div>
 
     <section class="py-20 px-4">
         <h2 class="text-3xl text-center mb-14 fade-up">Soluções Para Empresas de Todos os Portes</h2>
@@ -487,96 +640,194 @@
     </script>
 
     <script>
-        const slideDetails = [
-            {
-                title: 'Controle de SLA',
-                description: 'Conformidade, filas críticas e métricas em tempo real para priorizar atendimentos.'
-            },
-            {
-                title: 'Service Desk Operacional',
-                description: 'Fila de chamados com filtros, exportação e leitura rápida do backlog.'
-            },
-            {
-                title: 'Tickets em risco ou violados',
-                description: 'Visão tática para agir antes do estouro do prazo e equilibrar a operação.'
+        (() => {
+            const carouselRoot = document.querySelector('[data-carousel-root]');
+            if (!carouselRoot) {
+                return;
             }
-        ];
 
-        const carouselRoot = document.querySelector('[data-carousel-root]');
-        const track = document.querySelector('[data-carousel-track]');
-        const slides = Array.from(document.querySelectorAll('[data-carousel-slide]'));
-        const dots = Array.from(document.querySelectorAll('[data-carousel-dot]'));
-        const prevButton = document.querySelector('[data-carousel-prev]');
-        const nextButton = document.querySelector('[data-carousel-next]');
-        const titleElement = document.querySelector('[data-carousel-title]');
-        const descriptionElement = document.querySelector('[data-carousel-description]');
-        const counterElement = document.querySelector('[data-carousel-counter]');
+            const track = document.querySelector('[data-carousel-track]');
+            const slides = Array.from(document.querySelectorAll('[data-carousel-slide]'));
+            const dotsContainer = document.querySelector('[data-carousel-dots]');
+            const prevButton = document.querySelector('[data-carousel-prev]');
+            const nextButton = document.querySelector('[data-carousel-next]');
+            const titleElement = document.querySelector('[data-carousel-title]');
+            const descriptionElement = document.querySelector('[data-carousel-description]');
+            const counterElement = document.querySelector('[data-carousel-counter]');
+            const totalElement = document.querySelector('[data-carousel-total]');
+            const lightbox = document.querySelector('[data-lightbox]');
+            const lightboxImage = document.querySelector('[data-lightbox-image]');
+            const lightboxTitle = document.querySelector('[data-lightbox-title]');
+            const lightboxDownload = document.querySelector('[data-lightbox-download]');
+            const lightboxCloseButtons = Array.from(document.querySelectorAll('[data-lightbox-close]'));
+            const slideDetails = slides.map((slide) => ({
+                title: slide.dataset.slideTitle || '',
+                description: slide.dataset.slideDescription || ''
+            }));
 
-        let currentSlide = 0;
-        let autoplayId = null;
-
-        function setActiveSlide(index) {
-            currentSlide = (index + slides.length) % slides.length;
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            slides.forEach((slide, slideIndex) => {
-                const isActive = slideIndex === currentSlide;
-                slide.setAttribute('aria-hidden', String(!isActive));
+            const dots = slides.map((_, index) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = `carousel-dot${index === 0 ? ' is-active' : ''}`;
+                dot.setAttribute('aria-label', `Ir para o slide ${index + 1}`);
+                dot.dataset.carouselDot = String(index);
+                dotsContainer?.appendChild(dot);
+                return dot;
             });
 
-            dots.forEach((dot, dotIndex) => {
-                dot.classList.toggle('is-active', dotIndex === currentSlide);
-            });
+            let currentSlide = 0;
+            let autoplayId = null;
+            let isLightboxOpen = false;
+            let previousFocusedElement = null;
 
-            const details = slideDetails[currentSlide];
-            titleElement.textContent = details.title;
-            descriptionElement.textContent = details.description;
-            counterElement.textContent = String(currentSlide + 1).padStart(2, '0');
-        }
+            function setActiveSlide(index) {
+                currentSlide = (index + slides.length) % slides.length;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-        function stopAutoplay() {
-            if (autoplayId) {
-                window.clearInterval(autoplayId);
-                autoplayId = null;
+                slides.forEach((slide, slideIndex) => {
+                    const isActive = slideIndex === currentSlide;
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                });
+
+                dots.forEach((dot, dotIndex) => {
+                    dot.classList.toggle('is-active', dotIndex === currentSlide);
+                });
+
+                const details = slideDetails[currentSlide];
+                titleElement.textContent = details.title;
+                descriptionElement.textContent = details.description;
+                counterElement.textContent = String(currentSlide + 1).padStart(2, '0');
             }
-        }
 
-        function startAutoplay() {
-            stopAutoplay();
-            autoplayId = window.setInterval(() => {
-                setActiveSlide(currentSlide + 1);
-            }, 6500);
-        }
+            function stopAutoplay() {
+                if (autoplayId) {
+                    window.clearInterval(autoplayId);
+                    autoplayId = null;
+                }
+            }
 
-        function restartAutoplay() {
-            stopAutoplay();
-            startAutoplay();
-        }
+            function startAutoplay() {
+                if (isLightboxOpen) {
+                    return;
+                }
 
-        prevButton.addEventListener('click', () => {
-            setActiveSlide(currentSlide - 1);
-            restartAutoplay();
-        });
+                stopAutoplay();
+                autoplayId = window.setInterval(() => {
+                    setActiveSlide(currentSlide + 1);
+                }, 6500);
+            }
 
-        nextButton.addEventListener('click', () => {
-            setActiveSlide(currentSlide + 1);
-            restartAutoplay();
-        });
+            function restartAutoplay() {
+                if (isLightboxOpen) {
+                    return;
+                }
 
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                setActiveSlide(index);
+                stopAutoplay();
+                startAutoplay();
+            }
+
+            function openLightbox(trigger) {
+                if (!lightbox || !lightboxImage || !lightboxTitle || !lightboxDownload) {
+                    return;
+                }
+
+                previousFocusedElement = document.activeElement;
+                isLightboxOpen = true;
+                stopAutoplay();
+                lightboxImage.src = trigger.dataset.imageSrc || '';
+                lightboxImage.alt = trigger.dataset.imageAlt || trigger.querySelector('img')?.alt || '';
+                lightboxTitle.textContent = trigger.dataset.lightboxTitle || lightboxImage.alt || 'Imagem ampliada';
+                lightboxDownload.href = trigger.dataset.imageSrc || '#';
+
+                if (trigger.dataset.downloadName) {
+                    lightboxDownload.setAttribute('download', trigger.dataset.downloadName);
+                } else {
+                    lightboxDownload.removeAttribute('download');
+                }
+
+                lightbox.hidden = false;
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('lightbox-open');
+
+                window.requestAnimationFrame(() => {
+                    lightbox.classList.add('is-open');
+                    lightbox.querySelector('.lightbox-close')?.focus();
+                });
+            }
+
+            function closeLightbox() {
+                if (!lightbox || lightbox.hidden) {
+                    return;
+                }
+
+                isLightboxOpen = false;
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('lightbox-open');
+
+                window.setTimeout(() => {
+                    lightbox.hidden = true;
+                    lightboxImage?.removeAttribute('src');
+                }, 180);
+
+                if (previousFocusedElement && typeof previousFocusedElement.focus === 'function') {
+                    previousFocusedElement.focus();
+                }
+
+                startAutoplay();
+            }
+
+            prevButton?.addEventListener('click', () => {
+                setActiveSlide(currentSlide - 1);
                 restartAutoplay();
             });
-        });
 
-        carouselRoot.addEventListener('mouseenter', stopAutoplay);
-        carouselRoot.addEventListener('mouseleave', startAutoplay);
-        carouselRoot.addEventListener('focusin', stopAutoplay);
-        carouselRoot.addEventListener('focusout', startAutoplay);
+            nextButton?.addEventListener('click', () => {
+                setActiveSlide(currentSlide + 1);
+                restartAutoplay();
+            });
 
-        setActiveSlide(0);
-        startAutoplay();
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    setActiveSlide(index);
+                    restartAutoplay();
+                });
+            });
+
+            slides.forEach((slide, index) => {
+                const trigger = slide.querySelector('[data-lightbox-trigger]');
+                trigger?.addEventListener('click', () => {
+                    setActiveSlide(index);
+                    openLightbox(trigger);
+                });
+            });
+
+            lightboxCloseButtons.forEach((button) => {
+                button.addEventListener('click', closeLightbox);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+
+            carouselRoot.addEventListener('mouseenter', stopAutoplay);
+            carouselRoot.addEventListener('mouseleave', startAutoplay);
+            carouselRoot.addEventListener('focusin', stopAutoplay);
+            carouselRoot.addEventListener('focusout', () => {
+                if (!isLightboxOpen) {
+                    startAutoplay();
+                }
+            });
+
+            if (totalElement) {
+                totalElement.textContent = String(slides.length).padStart(2, '0');
+            }
+
+            setActiveSlide(0);
+            startAutoplay();
+        })();
     </script>
 </body>
 </html>
