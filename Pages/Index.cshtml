@@ -8,8 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SAM SOLUTION oferece suporte de TI em Vinhedo e região para microempresas, pequenos negócios e empresas maiores, com help desk, redes, manutenção e atendimento remoto/presencial.">
-    <title>SAM SOLUTION | Suporte de TI para Empresas em Vinhedo e Região</title>
+    <meta name="description" content="Sua empresa funcionando sem parar, sem dor de cabeça com TI. A SAM SOLUTION oferece suporte preventivo, monitoramento, manutenção e diagnóstico gratuito para empresas em Vinhedo e região.">
+    <title>SAM SOLUTION | Diagnóstico Gratuito e Suporte Preventivo de TI</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,22 +19,27 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E17CGRFC2B"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-E17CGRFC2B');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-E17CGRFC2B');
 
-        function trackClick(nome) {
-            gtag('event', nome, {
-                event_category: 'interacao',
-                event_label: nome
-            });
-        }
+      function trackClick(nome) {
+        gtag('event', nome, {
+            event_category: 'interacao',
+            event_label: nome
+        });
+      }
     </script>
 
     <style>
         :root {
+            --bg-base: #020617;
+            --panel: rgba(15, 23, 42, 0.74);
+            --panel-strong: rgba(15, 23, 42, 0.92);
             --border: rgba(148, 163, 184, 0.18);
+            --accent: #38bdf8;
+            --accent-strong: #2563eb;
         }
 
         body {
@@ -291,7 +296,7 @@
 
     <a href="https://wa.me/5519986093543"
        onclick="trackClick('whatsapp_fixo')"
-       aria-label="Falar no WhatsApp"
+       aria-label="Solicitar diagnóstico gratuito no WhatsApp"
        class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 px-5 py-3 rounded-full shadow-lg text-xl z-50 transition hover:scale-110">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -299,74 +304,132 @@
     <section class="relative px-4 pt-10 pb-24">
         <div class="mx-auto relative z-10 max-w-[98rem]">
             <div class="fade-up glass-panel rounded-[32px] p-4 md:p-6 lg:p-8">
-                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
-                    <div class="inline-flex items-center gap-3 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-xs uppercase tracking-[0.32em] text-sky-200">
-                        <span class="inline-block h-2.5 w-2.5 rounded-full bg-sky-400"></span>
-                        Portfólio IT Management
-                    </div>
-                    <div class="flex flex-wrap items-center gap-3">
-                        <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs text-slate-300">
-                            <i class="fa-regular fa-images text-sky-300"></i>
-                            6 visões reais do fluxo operacional
+                <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center mb-8">
+                    <div>
+                        <div class="inline-flex items-center gap-3 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-emerald-200">
+                            <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                            Diagnóstico gratuito para empresas em Vinhedo e região
                         </div>
-                        <a href="@Url.Content("~/images/it-management.pdf")" download class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
-                            <i class="fa-solid fa-download"></i>
-                            Baixar PDF
-                        </a>
+
+                        <img src="/images/samsolution.jpg" alt="Logo da SAM SOLUTION" class="mt-6 w-24 md:w-28 rounded-[24px] border border-sky-400/15 shadow-xl shadow-sky-950/30">
+                        <p class="text-sky-300 mt-6 mb-3 uppercase tracking-[0.38em] text-xs md:text-sm">SAM SOLUTION</p>
+
+                        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-5 max-w-4xl">
+                            Sua empresa funcionando sem parar, sem dor de cabeça com TI.
+                        </h1>
+                        <p class="text-slate-300 max-w-3xl mb-6 text-base md:text-lg leading-8">
+                            Cuidamos de toda a tecnologia da sua empresa para evitar falhas, prejuízos e perda de tempo.
+                        </p>
+                        <p class="max-w-3xl rounded-[28px] border border-slate-800 bg-slate-950/55 px-5 py-4 text-sm md:text-base leading-7 text-slate-200">
+                            Se sua empresa já passou por computador travando, internet instável, sistema fora do ar ou funcionários parados esperando suporte, você precisa de uma TI que previne problemas antes que eles aconteçam.
+                        </p>
+
+                        <div class="flex justify-start gap-4 flex-wrap mt-8">
+                            <a href="https://wa.me/5519986093543"
+                               onclick="trackClick('whatsapp_hero')"
+                               class="inline-flex items-center gap-2 bg-green-500 px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition shadow-lg shadow-green-950/40">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Solicitar diagnóstico gratuito
+                            </a>
+
+                            <a href="mailto:samsolution.150824@gmail.com"
+                               onclick="trackClick('email_hero')"
+                               class="inline-flex items-center gap-2 bg-blue-600 px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition shadow-lg shadow-blue-950/40">
+                                <i class="fa-solid fa-envelope"></i>
+                                Falar com especialista
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-4">
+                        <div class="rounded-[28px] border border-blue-500/30 bg-blue-500/10 p-6 md:p-7 shadow-xl shadow-blue-950/20">
+                            <p class="text-xs uppercase tracking-[0.3em] text-sky-200">Suporte preventivo de TI</p>
+                            <h2 class="mt-4 text-2xl md:text-3xl font-bold leading-tight">
+                                Não esperamos o problema acontecer.
+                            </h2>
+                            <p class="mt-4 text-slate-200 leading-7">
+                                Monitoramos, prevenimos e resolvemos antes que sua empresa pare.
+                            </p>
+                            <ul class="mt-6 space-y-3 text-sm text-slate-200">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                    Monitoramento contínuo para identificar riscos antes do usuário sentir o impacto.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                    Manutenção preventiva para reduzir falhas recorrentes em computadores e rede.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                                    Segurança, backup e acompanhamento contínuo por um valor fixo mensal.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-3">
+                            <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs text-slate-300">
+                                <i class="fa-regular fa-images text-sky-300"></i>
+                                6 exemplos reais de monitoramento e atendimento
+                            </div>
+                            <a href="/images/it-management.pdf" download class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
+                                <i class="fa-solid fa-download"></i>
+                                Baixar apresentação
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="carousel-shell mt-5 -mx-4 w-auto md:-mx-6 lg:-mx-8" data-carousel-root>
                     <div class="absolute left-4 top-4 z-20 inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-xs text-slate-200">
                         <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-                        Demonstração visual do ambiente
+                        Prova visual do acompanhamento contínuo
                     </div>
 
                     <div class="carousel-track" data-carousel-track>
-                        <article class="carousel-slide" data-carousel-slide data-slide-title="Controle de SLA" data-slide-description="Conformidade, filas críticas e métricas em tempo real para priorizar atendimentos." aria-hidden="false">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Controle de SLA" data-slide-description="Acompanhamos prioridades e prazos para que chamados críticos não parem a equipe." aria-hidden="false">
                             <div class="carousel-frame">
-                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Controle de SLA" data-image-src="@Url.Content("~/images/portfolio-sla.png")" data-image-alt="Painel de controle de SLA" data-download-name="portfolio-sla.png" aria-label="Ampliar painel de controle de SLA">
-                                    <img class="carousel-image" src="@Url.Content("~/images/portfolio-sla.png")" alt="Painel de controle de SLA">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Controle de SLA" data-image-src="/images/portfolio-sla.png" data-image-alt="Painel de controle de SLA" data-download-name="portfolio-sla.png" aria-label="Ampliar painel de controle de SLA">
+                                    <img class="carousel-image" src="/images/portfolio-sla.png" alt="Painel de controle de SLA">
                                     <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
-                        <article class="carousel-slide" data-carousel-slide data-slide-title="Service Desk Operacional" data-slide-description="Fila de chamados com filtros, exportação e leitura rápida do backlog." aria-hidden="true">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Service Desk Operacional" data-slide-description="Organização do atendimento para ninguém ficar horas esperando uma solução." aria-hidden="true">
                             <div class="carousel-frame">
-                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Service Desk Operacional" data-image-src="@Url.Content("~/images/portfolio-service-desk.png")" data-image-alt="Painel de service desk operacional" data-download-name="portfolio-service-desk.png" aria-label="Ampliar painel de service desk operacional">
-                                    <img class="carousel-image" src="@Url.Content("~/images/portfolio-service-desk.png")" alt="Painel de service desk operacional">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Service Desk Operacional" data-image-src="/images/portfolio-service-desk.png" data-image-alt="Painel de service desk operacional" data-download-name="portfolio-service-desk.png" aria-label="Ampliar painel de service desk operacional">
+                                    <img class="carousel-image" src="/images/portfolio-service-desk.png" alt="Painel de service desk operacional">
                                     <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
-                        <article class="carousel-slide" data-carousel-slide data-slide-title="Tickets em risco ou violados" data-slide-description="Visão tática para agir antes do estouro do prazo e equilibrar a operação." aria-hidden="true">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Tickets em risco ou violados" data-slide-description="Identificamos gargalos antes que um atraso vire prejuízo e desgaste para o time." aria-hidden="true">
                             <div class="carousel-frame">
-                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Tickets em risco ou violados" data-image-src="@Url.Content("~/images/portfolio-tickets-risco.png")" data-image-alt="Painel de tickets em risco ou violados" data-download-name="portfolio-tickets-risco.png" aria-label="Ampliar painel de tickets em risco ou violados">
-                                    <img class="carousel-image" src="@Url.Content("~/images/portfolio-tickets-risco.png")" alt="Painel de tickets em risco ou violados">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Tickets em risco ou violados" data-image-src="/images/portfolio-tickets-risco.png" data-image-alt="Painel de tickets em risco ou violados" data-download-name="portfolio-tickets-risco.png" aria-label="Ampliar painel de tickets em risco ou violados">
+                                    <img class="carousel-image" src="/images/portfolio-tickets-risco.png" alt="Painel de tickets em risco ou violados">
                                     <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
-                        <article class="carousel-slide" data-carousel-slide data-slide-title="SOC Command Center" data-slide-description="Defesa, telemetria e resposta com fila prioritária e leitura rápida do ambiente." aria-hidden="true">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="SOC Command Center" data-slide-description="Mais visibilidade de segurança para agir rápido diante de riscos e comportamentos fora do padrão." aria-hidden="true">
                             <div class="carousel-frame">
-                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="SOC Command Center" data-image-src="@Url.Content("~/images/portfolio-soc-command-center.png")" data-image-alt="Painel SOC Command Center com defesa, telemetria e resposta" data-download-name="portfolio-soc-command-center.png" aria-label="Ampliar painel SOC Command Center">
-                                    <img class="carousel-image" src="@Url.Content("~/images/portfolio-soc-command-center.png")" alt="Painel SOC Command Center com defesa, telemetria e resposta">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="SOC Command Center" data-image-src="/images/portfolio-soc-command-center.png" data-image-alt="Painel SOC Command Center com defesa, telemetria e resposta" data-download-name="portfolio-soc-command-center.png" aria-label="Ampliar painel SOC Command Center">
+                                    <img class="carousel-image" src="/images/portfolio-soc-command-center.png" alt="Painel SOC Command Center com defesa, telemetria e resposta">
                                     <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
-                        <article class="carousel-slide" data-carousel-slide data-slide-title="Monitoramento e incidentes" data-slide-description="Painel executivo com ativos, incidentes, serviços e leitura operacional em tempo real." aria-hidden="true">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Monitoramento e incidentes" data-slide-description="Monitoramento contínuo para enxergar quedas e falhas antes que o usuário sinta." aria-hidden="true">
                             <div class="carousel-frame">
-                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Monitoramento e incidentes" data-image-src="@Url.Content("~/images/portfolio-monitoramento-incidentes.png")" data-image-alt="Painel de monitoramento e incidentes em tempo real" data-download-name="portfolio-monitoramento-incidentes.png" aria-label="Ampliar painel de monitoramento e incidentes">
-                                    <img class="carousel-image" src="@Url.Content("~/images/portfolio-monitoramento-incidentes.png")" alt="Painel de monitoramento e incidentes em tempo real">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Monitoramento e incidentes" data-image-src="/images/portfolio-monitoramento-incidentes.png" data-image-alt="Painel de monitoramento e incidentes em tempo real" data-download-name="portfolio-monitoramento-incidentes.png" aria-label="Ampliar painel de monitoramento e incidentes">
+                                    <img class="carousel-image" src="/images/portfolio-monitoramento-incidentes.png" alt="Painel de monitoramento e incidentes em tempo real">
                                     <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
                         </article>
-                        <article class="carousel-slide" data-carousel-slide data-slide-title="Catálogo de serviços" data-slide-description="Pacotes operacionais com escopo, janela e SLA definidos para apresentação comercial." aria-hidden="true">
+                        <article class="carousel-slide" data-carousel-slide data-slide-title="Catálogo de serviços" data-slide-description="Escopo claro, responsabilidade definida e previsibilidade para a empresa saber o que recebe." aria-hidden="true">
                             <div class="carousel-frame">
-                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Catálogo de serviços" data-image-src="@Url.Content("~/images/portfolio-catalogo-servicos.png")" data-image-alt="Catálogo de serviços de TI com pacotes operacionais" data-download-name="portfolio-catalogo-servicos.png" aria-label="Ampliar catálogo de serviços">
-                                    <img class="carousel-image" src="@Url.Content("~/images/portfolio-catalogo-servicos.png")" alt="Catálogo de serviços de TI com pacotes operacionais">
+                                <button type="button" class="carousel-shot" data-lightbox-trigger data-lightbox-title="Catálogo de serviços" data-image-src="/images/portfolio-catalogo-servicos.png" data-image-alt="Catálogo de serviços de TI com pacotes operacionais" data-download-name="portfolio-catalogo-servicos.png" aria-label="Ampliar catálogo de serviços">
+                                    <img class="carousel-image" src="/images/portfolio-catalogo-servicos.png" alt="Catálogo de serviços de TI com pacotes operacionais">
                                     <span class="carousel-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="carousel-zoom-label">Clique para ampliar</span><span class="carousel-zoom-label-mobile">Ampliar</span></span>
                                 </button>
                             </div>
@@ -385,10 +448,10 @@
 
                 <div class="mt-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
                     <div class="max-w-3xl">
-                        <p class="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-sky-200/90">Preview em destaque</p>
+                        <p class="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-sky-200/90">Painel em destaque</p>
                         <h2 class="text-2xl md:text-3xl font-bold" data-carousel-title>Controle de SLA</h2>
                         <p class="mt-2 text-sm md:text-base text-slate-200/90" data-carousel-description>
-                            Conformidade, filas críticas e métricas em tempo real para priorizar atendimentos.
+                            Acompanhamos prioridades e prazos para que chamados críticos não parem a equipe.
                         </p>
                     </div>
                     <div class="flex flex-col items-start gap-4 xl:items-end">
@@ -403,23 +466,23 @@
 
                 <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                     <div class="metric-card rounded-[28px] p-5">
-                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Destaques</p>
+                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Monitoramento</p>
                         <p class="mt-5 text-4xl font-bold text-sky-300">24/7</p>
-                        <p class="mt-3 text-sm text-slate-300">Visual de operação para incidentes, backlog e prazos sensíveis.</p>
+                        <p class="mt-3 text-sm text-slate-300">Visibilidade contínua para agir rápido diante de incidentes e gargalos.</p>
                     </div>
                     <div class="metric-card rounded-[28px] p-5">
                         <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Cobertura</p>
-                        <p class="mt-5 text-4xl font-bold text-sky-300">6 telas</p>
-                        <p class="mt-3 text-sm text-slate-300">SLA, service desk, tickets críticos, SOC, monitoramento e catálogo em um carrossel único.</p>
+                        <p class="mt-5 text-4xl font-bold text-sky-300">6 frentes</p>
+                        <p class="mt-3 text-sm text-slate-300">Chamados, SLA, tickets críticos, segurança, monitoramento e escopo comercial.</p>
                     </div>
                     <div class="metric-card rounded-[28px] p-5">
-                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Aplicação</p>
-                        <p class="mt-5 text-sm leading-7 text-slate-300">Serve para apresentar maturidade operacional logo na primeira dobra e reforçar monitoramento, atendimento e gestão com SLA.</p>
+                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Benefício</p>
+                        <p class="mt-5 text-sm leading-7 text-slate-300">Menos surpresa, mais previsibilidade e mais controle para a empresa tomar decisão sem apagar incêndio.</p>
                     </div>
                     <div class="metric-card rounded-[28px] p-5">
                         <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Material Completo</p>
-                        <p class="mt-5 text-sm leading-7 text-slate-300">O PDF fica separado só para download, sem passar dentro do carrossel.</p>
-                        <a href="@Url.Content("~/images/it-management.pdf")" download class="mt-5 inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-4 py-3 font-semibold text-white shadow-lg shadow-emerald-950/40">
+                        <p class="mt-5 text-sm leading-7 text-slate-300">Leve a apresentação para avaliar internamente e compartilhar com sócios ou gestores.</p>
+                        <a href="/images/it-management.pdf" download class="mt-5 inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-4 py-3 font-semibold text-white shadow-lg shadow-emerald-950/40">
                             <i class="fa-solid fa-file-arrow-down"></i>
                             Baixar apresentação
                         </a>
@@ -430,34 +493,31 @@
 
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="fade-up mt-14 text-center">
-                <img src="~/images/samsolution.jpg" alt="Logo da SAM SOLUTION" class="w-28 md:w-40 mx-auto mb-6 rounded-[28px] border border-sky-400/15 shadow-xl shadow-sky-950/30">
-                <p class="text-sky-300 mb-3 uppercase tracking-[0.38em] text-xs md:text-sm">SAM SOLUTION</p>
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-5 max-w-5xl mx-auto">
-                    Suporte de TI para negócios de todos os portes
-                </h1>
-                <p class="text-slate-300 max-w-3xl mx-auto mb-9 text-base md:text-lg leading-8">
-                    Atendimento remoto e presencial para microempresas, pequenos negócios e operações maiores, com foco em continuidade, produtividade e visibilidade do ambiente.
+                <p class="text-sky-300 mb-3 uppercase tracking-[0.38em] text-xs md:text-sm">As dores que mais param uma empresa</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5 max-w-5xl mx-auto">
+                    Problemas simples de TI viram prejuízo rápido.
+                </h2>
+                <p class="text-slate-300 max-w-4xl mx-auto mb-9 text-base md:text-lg leading-8">
+                    Quando o computador trava, a internet cai ou o sistema sai do ar, a empresa perde produtividade, atrasa entregas e muitas vezes deixa dinheiro na mesa. O custo da falha quase sempre é maior do que o custo de prevenir.
                 </p>
-                <div class="flex justify-center gap-4 flex-wrap mb-10">
-                    <a href="https://wa.me/5519986093543"
-                       onclick="trackClick('whatsapp_hero')"
-                       class="inline-flex items-center gap-2 bg-green-500 px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition shadow-lg shadow-green-950/40">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        Agendar Diagnóstico
-                    </a>
 
-                    <a href="mailto:samsolution.150824@gmail.com"
-                       onclick="trackClick('email_hero')"
-                       class="inline-flex items-center gap-2 bg-blue-600 px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition shadow-lg shadow-blue-950/40">
-                        <i class="fa-solid fa-envelope"></i>
-                        Solicitar Proposta
-                    </a>
-                </div>
-
-                <div class="max-w-5xl mx-auto grid sm:grid-cols-3 gap-4 text-sm">
-                    <div class="metric-card rounded-2xl p-5 border border-slate-800">Atendimento para micro e pequenos negócios</div>
-                    <div class="metric-card rounded-2xl p-5 border border-slate-800">Planos para PMEs em crescimento</div>
-                    <div class="metric-card rounded-2xl p-5 border border-slate-800">Escopo para operações maiores</div>
+                <div class="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left text-sm">
+                    <div class="metric-card rounded-2xl p-5 border border-slate-800">
+                        <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Computador travando</p>
+                        <p class="text-slate-200">Tarefas simples demoram mais, o time perde ritmo e o atendimento fica lento.</p>
+                    </div>
+                    <div class="metric-card rounded-2xl p-5 border border-slate-800">
+                        <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Internet instável</p>
+                        <p class="text-slate-200">Chamadas caem, sistemas oscilam e a operação perde velocidade.</p>
+                    </div>
+                    <div class="metric-card rounded-2xl p-5 border border-slate-800">
+                        <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Sistema fora do ar</p>
+                        <p class="text-slate-200">Financeiro, vendas e rotina interna param justamente quando a empresa mais precisa.</p>
+                    </div>
+                    <div class="metric-card rounded-2xl p-5 border border-slate-800">
+                        <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Equipe esperando suporte</p>
+                        <p class="text-slate-200">Horas improdutivas se acumulam e o dono acaba apagando incêndio no lugar de crescer.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -484,65 +544,106 @@
     </div>
 
     <section class="py-20 px-4">
-        <h2 class="text-3xl text-center mb-14 fade-up">Soluções Para Empresas de Todos os Portes</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                <h3 class="text-xl font-semibold mb-2">Service Desk Corporativo</h3>
-                <p class="text-gray-400 text-sm">Suporte técnico para usuários, gestão de chamados e resolução de incidentes com prioridade por criticidade.</p>
+        <div class="max-w-6xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center fade-up mb-14">
+                <p class="text-sky-300 mb-3 uppercase tracking-[0.32em] text-xs">Como ajudamos</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-5">Cuidamos da tecnologia para sua empresa produzir mais e parar menos.</h2>
+                <p class="text-slate-300 text-base md:text-lg leading-8">
+                    Com a SAM Solution, sua empresa conta com suporte técnico, monitoramento, manutenção preventiva, segurança dos dados e acompanhamento contínuo por um valor fixo mensal.
+                </p>
             </div>
-            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                <h3 class="text-xl font-semibold mb-2">Gestão de Equipamentos</h3>
-                <p class="text-gray-400 text-sm">Padronização, upgrade, manutenção preventiva e corretiva de notebooks, desktops e estações de trabalho.</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                <h3 class="text-xl font-semibold mb-2">Backup e Continuidade</h3>
-                <p class="text-gray-400 text-sm">Rotinas de backup, organização de arquivos e recuperação rápida para reduzir impacto de falhas no dia a dia.</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                <h3 class="text-xl font-semibold mb-2">Redes Corporativas</h3>
-                <p class="text-gray-400 text-sm">Projeto e suporte de rede, Wi-Fi corporativo, segmentação e melhoria de desempenho para equipes.</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                <h3 class="text-xl font-semibold mb-2">Nuvem e Microsoft 365</h3>
-                <p class="text-gray-400 text-sm">Configuração de contas, e-mail, colaboração e continuidade das operações com ferramentas em nuvem.</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                <h3 class="text-xl font-semibold mb-2">Projetos de Melhoria</h3>
-                <p class="text-gray-400 text-sm">Diagnóstico técnico com plano de evolução para reduzir paradas e aumentar produtividade.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
+                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Suporte técnico</p>
+                    <h3 class="text-xl font-semibold mb-2">Sua equipe volta a produzir mais rápido</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        Atendemos dúvidas, erros e travamentos do dia a dia para que ninguém fique parado esperando ajuda.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
+                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Manutenção preventiva</p>
+                    <h3 class="text-xl font-semibold mb-2">Computadores revisados antes de dar problema</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        Acompanhamos equipamentos, atualizações e rotina de manutenção para evitar falhas recorrentes.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
+                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Backup e segurança</p>
+                    <h3 class="text-xl font-semibold mb-2">Seus dados protegidos contra perda e sustos</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        Organizamos backup, acesso e recuperação para reduzir risco de prejuízo quando algo sai do controle.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
+                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Rede e internet</p>
+                    <h3 class="text-xl font-semibold mb-2">Internet e Wi-Fi mais estáveis para o time</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        Corrigimos gargalos de rede e instabilidade que atrasam atendimento, vendas e operação.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
+                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Microsoft 365 e nuvem</p>
+                    <h3 class="text-xl font-semibold mb-2">E-mails, arquivos e colaboração funcionando</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        Mantemos contas, permissões e ferramentas em ordem para o trabalho continuar fluindo.
+                    </p>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
+                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Diagnóstico e melhorias</p>
+                    <h3 class="text-xl font-semibold mb-2">Prioridade no que realmente impacta o negócio</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        Mostramos onde sua operação perde tempo e o que fazer primeiro para ganhar estabilidade.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="py-20 px-4 bg-gray-900/60">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl text-center mb-4 fade-up">Modelo de Atendimento</h2>
-            <p class="text-gray-300 text-center max-w-3xl mx-auto mb-12 fade-up">Estruturamos o suporte conforme o porte do seu negócio e a criticidade da sua operação.</p>
+            <p class="text-sky-300 text-center mb-3 uppercase tracking-[0.32em] text-xs fade-up">Planos mensais</p>
+            <h2 class="text-3xl md:text-4xl text-center mb-4 fade-up font-bold">Escolha o acompanhamento certo para o momento da sua empresa</h2>
+            <p class="text-gray-300 text-center max-w-3xl mx-auto mb-12 fade-up text-base md:text-lg leading-8">
+                Mantivemos os planos Essential, Pro e Enterprise, agora explicados de forma simples para mostrar qual resultado cada nível entrega.
+            </p>
+
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 fade-up">
+                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Para sair do improviso</p>
                     <h3 class="text-xl font-semibold mb-3">Essential</h3>
-                    <p class="text-gray-400 text-sm mb-4">Para microempresas e pequenos negócios.</p>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li>Suporte remoto</li>
-                        <li>Visitas programadas</li>
-                        <li>Monitoramento básico</li>
+                    <p class="text-gray-400 text-sm mb-4 leading-7">Ideal para pequenas empresas que precisam de suporte confiável e rotina preventiva sem complicação.</p>
+                    <ul class="text-sm text-gray-300 space-y-3">
+                        <li>Suporte remoto para resolver travamentos e falhas do dia a dia com agilidade.</li>
+                        <li>Visitas programadas para revisar equipamentos e evitar problemas recorrentes.</li>
+                        <li>Monitoramento básico para enxergar riscos antes que eles virem parada.</li>
                     </ul>
                 </div>
-                <div class="bg-blue-600/20 p-6 rounded-xl border border-blue-500 fade-up">
-                    <h3 class="text-xl font-semibold mb-3">Pro</h3>
-                    <p class="text-gray-300 text-sm mb-4">Para pequenas e médias empresas em crescimento.</p>
-                    <ul class="text-sm text-gray-200 space-y-2">
-                        <li>SLA contratual</li>
-                        <li>Suporte remoto + presencial</li>
-                        <li>Backup e continuidade operacional</li>
+
+                <div class="bg-blue-600/20 p-6 rounded-xl border border-blue-500 fade-up shadow-lg shadow-blue-950/20">
+                    <div class="inline-flex rounded-full border border-blue-400/30 bg-blue-500/15 px-3 py-1 text-[0.65rem] uppercase tracking-[0.28em] text-blue-100">Mais procurado</div>
+                    <h3 class="text-xl font-semibold mt-4 mb-3">Pro</h3>
+                    <p class="text-gray-300 text-sm mb-4 leading-7">Para pequenas e médias empresas que querem prevenção contínua e atendimento rápido quando algo sai do normal.</p>
+                    <ul class="text-sm text-gray-200 space-y-3">
+                        <li>Suporte remoto e presencial para manter a equipe produtiva sem depender de improviso.</li>
+                        <li>Backup e continuidade operacional para reduzir prejuízo quando houver falha crítica.</li>
+                        <li>SLA e acompanhamento próximo para que os problemas não se acumulem.</li>
                     </ul>
                 </div>
+
                 <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 fade-up">
+                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Para operações críticas</p>
                     <h3 class="text-xl font-semibold mb-3">Enterprise</h3>
-                    <p class="text-gray-400 text-sm mb-4">Para empresas com operação mais crítica e maior complexidade.</p>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li>Atendimento prioritário</li>
-                        <li>Escopo personalizado</li>
-                        <li>Acompanhamento estratégico</li>
+                    <p class="text-gray-400 text-sm mb-4 leading-7">Para empresas com ambientes mais complexos, maior volume de usuários e impacto alto quando a operação para.</p>
+                    <ul class="text-sm text-gray-300 space-y-3">
+                        <li>Atendimento prioritário para incidentes que afetam áreas-chave do negócio.</li>
+                        <li>Escopo personalizado conforme sistemas, unidades e rotina da operação.</li>
+                        <li>Acompanhamento estratégico para crescer com mais segurança e previsibilidade.</li>
                     </ul>
                 </div>
             </div>
@@ -551,32 +652,47 @@
 
     <section class="py-24 text-center bg-blue-600 fade-up">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-semibold mb-6">Quer evoluir a TI do seu negócio?</h2>
-            <p class="mb-8 text-blue-100">Fale com a SAM SOLUTION e receba um diagnóstico técnico para montar o plano ideal para o porte da sua empresa.</p>
-            <a href="https://wa.me/5519986093543"
-               onclick="trackClick('cta_whatsapp')"
-               class="bg-white text-blue-600 px-10 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition inline-flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp"></i>
-                Agendar Diagnóstico Corporativo
-            </a>
+            <p class="text-xs uppercase tracking-[0.32em] text-blue-100 mb-3">Diagnóstico gratuito</p>
+            <h2 class="text-3xl md:text-4xl font-semibold mb-6">Pare de perder tempo e dinheiro com problemas de TI.</h2>
+            <p class="mb-8 text-blue-100 text-base md:text-lg leading-8">
+                Solicite agora um diagnóstico gratuito e descubra como evitar falhas, prejuízos e perda de tempo na sua operação.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="https://wa.me/5519986093543"
+                   onclick="trackClick('cta_whatsapp')"
+                   class="bg-white text-blue-600 px-10 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition inline-flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Solicitar diagnóstico gratuito
+                </a>
+                <a href="mailto:samsolution.150824@gmail.com"
+                   onclick="trackClick('cta_email')"
+                   class="border border-white/40 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 transition inline-flex items-center gap-2">
+                    <i class="fa-solid fa-envelope"></i>
+                    Receber contato por e-mail
+                </a>
+            </div>
         </div>
     </section>
 
     <section class="py-16 px-4">
         <div class="max-w-5xl mx-auto text-center fade-up">
-            <h2 class="text-3xl mb-6">Por que empresas escolhem a SAM SOLUTION</h2>
+            <p class="text-sky-300 mb-3 uppercase tracking-[0.32em] text-xs">Por que empresas escolhem a SAM SOLUTION</p>
+            <h2 class="text-3xl md:text-4xl mb-4 font-bold">TI que previne em vez de só apagar incêndio</h2>
+            <p class="max-w-3xl mx-auto text-slate-300 text-base md:text-lg leading-8 mb-10">
+                Não esperamos o problema acontecer. Monitoramos, prevenimos e resolvemos antes que sua empresa pare.
+            </p>
             <div class="grid md:grid-cols-3 gap-6 text-left">
                 <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
-                    <h3 class="font-semibold mb-2">Resposta organizada</h3>
-                    <p class="text-sm text-gray-400">Atendimento com processo, registro e acompanhamento de cada demanda.</p>
+                    <h3 class="font-semibold mb-2">Resposta rápida quando algo sai do normal</h3>
+                    <p class="text-sm text-gray-400 leading-7">Atendimento organizado para resolver o que trava a equipe sem deixar chamados esquecidos.</p>
                 </div>
                 <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
-                    <h3 class="font-semibold mb-2">Visão de continuidade</h3>
-                    <p class="text-sm text-gray-400">Ações preventivas para reduzir falhas recorrentes e tempo de indisponibilidade.</p>
+                    <h3 class="font-semibold mb-2">Acompanhamento contínuo para reduzir falhas</h3>
+                    <p class="text-sm text-gray-400 leading-7">Prevenção recorrente para diminuir indisponibilidade e evitar os mesmos problemas toda semana.</p>
                 </div>
                 <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
-                    <h3 class="font-semibold mb-2">Parceria de longo prazo</h3>
-                    <p class="text-sm text-gray-400">Suporte adaptado ao ritmo de crescimento do seu negócio.</p>
+                    <h3 class="font-semibold mb-2">Parceiro de TI para o crescimento da empresa</h3>
+                    <p class="text-sm text-gray-400 leading-7">Suporte que acompanha o ritmo do negócio e ajuda a tomar decisões com mais segurança.</p>
                 </div>
             </div>
         </div>
@@ -584,22 +700,41 @@
 
     <footer class="py-12 text-center">
         <div class="flex justify-center gap-8 mb-6 text-3xl">
-            <a href="https://www.linkedin.com/company/sam-solutions-technology" onclick="trackClick('linkedin')" aria-label="LinkedIn da SAM SOLUTION" class="hover:text-blue-400 transition">
+            <a href="https://www.linkedin.com/company/sam-solutions-technology"
+               onclick="trackClick('linkedin')"
+               aria-label="LinkedIn da SAM SOLUTION"
+               class="hover:text-blue-400 transition">
                 <i class="fa-brands fa-linkedin"></i>
             </a>
-            <a href="https://www.instagram.com/samsolution9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" onclick="trackClick('instagram')" aria-label="Instagram da SAM SOLUTION" class="hover:text-blue-400 transition">
+
+            <a href="https://www.instagram.com/samsolution9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+               onclick="trackClick('instagram')"
+               aria-label="Instagram da SAM SOLUTION"
+               class="hover:text-blue-400 transition">
                 <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://wa.me/5519986093543" onclick="trackClick('whatsapp_footer')" aria-label="WhatsApp da SAM SOLUTION" class="hover:text-green-400 transition">
+
+            <a href="https://wa.me/5519986093543"
+               onclick="trackClick('whatsapp_footer')"
+               aria-label="WhatsApp da SAM SOLUTION"
+               class="hover:text-green-400 transition">
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
-            <a href="mailto:samsolution.150824@gmail.com" onclick="trackClick('email_footer')" aria-label="E-mail da SAM SOLUTION" class="hover:text-red-400 transition">
+
+            <a href="mailto:samsolution.150824@gmail.com"
+               onclick="trackClick('email_footer')"
+               aria-label="E-mail da SAM SOLUTION"
+               class="hover:text-red-400 transition">
                 <i class="fa-solid fa-envelope"></i>
             </a>
         </div>
 
-        <p class="text-sm text-gray-500">&copy; <span id="ano"></span> SAM SOLUTION</p>
-        <p class="text-xs text-gray-600 mt-2">Suporte de TI para micro, pequenas, médias e grandes empresas em Vinhedo e região</p>
+        <p class="text-sm text-gray-500">
+            &copy; <span id="ano"></span> SAM SOLUTION
+        </p>
+        <p class="text-xs text-gray-600 mt-2">
+            Suporte preventivo de TI para pequenas e médias empresas em Vinhedo e região
+        </p>
     </footer>
 
     <script>
@@ -808,3 +943,4 @@
     </script>
 </body>
 </html>
+
