@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mM7miZEdpMI=",
+  "dgSpecHash": "Fh1q31zldu8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Samuel\\source\\repos\\samsolution\\samsolution.csproj",
   "expectedPackageFiles": [
@@ -10,5 +10,18 @@
     "C:\\Users\\Samuel\\.nuget\\packages\\system.formats.asn1\\8.0.1\\system.formats.asn1.8.0.1.nupkg.sha512",
     "C:\\Users\\Samuel\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "O pacote 'MailKit' 4.15.0 tem uma moderado vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-9j88-vvj5-vhgr",
+      "projectPath": "C:\\Users\\Samuel\\source\\repos\\samsolution\\samsolution.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Samuel\\source\\repos\\samsolution\\samsolution.csproj",
+      "libraryId": "MailKit",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
