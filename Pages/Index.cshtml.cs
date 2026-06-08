@@ -8,13 +8,13 @@ namespace samsolution.Pages
     public class IndexModel : PageModel
     {
         [BindProperty]
-        public string Nome { get; set; }
+        public string Nome { get; set; } = string.Empty;
 
         [BindProperty]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [BindProperty]
-        public string Mensagem { get; set; }
+        public string Mensagem { get; set; } = string.Empty;
         [BindProperty]
         public bool EmailEnviado { get; set; } = false;
 

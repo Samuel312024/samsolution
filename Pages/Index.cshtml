@@ -80,158 +80,88 @@
             pointer-events: none;
         }
 
-        .showcase-shell {
-            position: relative;
-            overflow: hidden;
-            border-radius: 28px;
-            border: 1px solid rgba(96, 165, 250, 0.18);
-            background:
-                linear-gradient(180deg, rgba(12, 20, 36, 0.86), rgba(2, 6, 23, 0.96)),
-                radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 28%);
-        }
-
-        .showcase-frame {
-            position: relative;
-            aspect-ratio: 16 / 8.2;
-            min-height: 340px;
-            background: linear-gradient(145deg, rgba(15, 23, 42, 0.85), rgba(2, 6, 23, 1));
-        }
-
-        @* .showcase-image {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        } *@
-
-        .showcase-shot {
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            border: 0;
-            background: transparent;
-            cursor: zoom-in;
-        }
-
-        .showcase-shot:focus-visible {
-            outline: 3px solid rgba(96, 165, 250, 0.92);
-            outline-offset: -3px;
-        }
-
-        .showcase-zoom {
-            position: absolute;
-            right: 1rem;
-            bottom: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.18);
-            background: rgba(2, 6, 23, 0.72);
-            padding: 0.55rem 0.9rem;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #e2e8f0;
-            backdrop-filter: blur(16px);
-            white-space: nowrap;
-            max-width: calc(100% - 2rem);
-        }
-
-        .showcase-zoom-label-mobile {
-            display: none;
-        }
-
         .metric-card {
             background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.72));
             border: 1px solid rgba(96, 165, 250, 0.14);
         }
 
-        body.lightbox-open {
-            overflow: hidden;
+        .signal-card {
+            background:
+                linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(6, 12, 24, 0.94)),
+                radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 32%);
+            border: 1px solid rgba(96, 165, 250, 0.14);
+            box-shadow: 0 30px 60px rgba(2, 6, 23, 0.3);
         }
 
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            z-index: 70;
-            display: grid;
-            place-items: center;
-            padding: 1.25rem;
-            background: rgba(2, 6, 23, 0.84);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.18s ease, visibility 0.18s ease;
+        .signal-step {
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            background: rgba(2, 6, 23, 0.34);
         }
 
-        .lightbox.is-open {
-            opacity: 1;
-            visibility: visible;
+        .contact-card {
+            background:
+                linear-gradient(180deg, rgba(8, 15, 29, 0.98), rgba(3, 7, 18, 0.98)),
+                radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 30%);
+            border: 1px solid rgba(56, 189, 248, 0.18);
+            box-shadow: 0 34px 70px rgba(2, 6, 23, 0.4);
         }
 
-        .lightbox-backdrop {
-            position: absolute;
-            inset: 0;
-            border: 0;
-            background: transparent;
+        .trust-chip {
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            background: rgba(15, 23, 42, 0.72);
         }
 
-        .lightbox-panel {
-            position: relative;
-            z-index: 1;
-            width: min(96vw, 1500px);
-            max-height: 92vh;
-            overflow: hidden;
-            border-radius: 28px;
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
-            box-shadow: 0 40px 80px rgba(2, 6, 23, 0.55);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            z-index: 2;
-            width: 2.75rem;
-            height: 2.75rem;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            background: rgba(15, 23, 42, 0.82);
-            color: #f8fafc;
-        }
-
-        .lightbox-image {
+        .lead-label {
             display: block;
+            margin-bottom: 0.55rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #bae6fd;
+        }
+
+        .lead-input,
+        .lead-textarea {
             width: 100%;
-            max-height: calc(92vh - 7rem);
-            object-fit: contain;
-            background: #020617;
+            border-radius: 18px;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            background: rgba(15, 23, 42, 0.82);
+            color: #e2e8f0;
+            padding: 0.95rem 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .lead-input::placeholder,
+        .lead-textarea::placeholder {
+            color: #64748b;
+        }
+
+        .lead-input:focus,
+        .lead-textarea:focus {
+            outline: none;
+            border-color: rgba(56, 189, 248, 0.62);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.14);
+            background: rgba(15, 23, 42, 0.96);
+        }
+
+        .lead-textarea {
+            min-height: 132px;
+            resize: vertical;
+        }
+
+        .cta-panel {
+            background:
+                linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(37, 99, 235, 0.18)),
+                linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+            border: 1px solid rgba(96, 165, 250, 0.16);
+            box-shadow: 0 38px 80px rgba(2, 6, 23, 0.34);
         }
 
         @@media (max-width: 768px) {
-            .showcase-frame {
-                min-height: 220px;
-            }
-
-            .showcase-zoom {
-                right: 0.6rem;
-                bottom: 0.6rem;
-                font-size: 0.58rem;
-                letter-spacing: 0.04em;
-                padding: 0.42rem 0.62rem;
-                max-width: calc(100% - 1.2rem);
-            }
-
-            .showcase-zoom-label {
-                display: none;
-            }
-
-            .showcase-zoom-label-mobile {
-                display: inline;
+            .lead-input,
+            .lead-textarea {
+                font-size: 16px;
             }
         }
     </style>
@@ -313,45 +243,94 @@
                             </ul>
                         </div>
 
-                        <div class="flex flex-wrap items-center gap-3">
-                            <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-xs text-slate-300">
-                                <i class="fa-regular fa-images text-sky-300"></i>
-                                Apresentacao com 6 exemplos reais de monitoramento e atendimento
-                            </div>
-                            <a href="/images/it-management.pdf" download class="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
-                                <i class="fa-solid fa-download"></i>
-                                Baixar apresentação
-                            </a>
-                        </div>
                     </div>
                 </div>
 
-                @* <div class="showcase-shell mt-5 -mx-4 w-auto md:-mx-6 lg:-mx-8">
-                    <div class="showcase-frame">
-                        <button type="button" class="showcase-shot" data-lightbox-trigger data-lightbox-title="Service Desk Operacional" data-image-src="/images/portfolio-service-desk.png" data-image-alt="Painel de service desk operacional" data-download-name="portfolio-service-desk.png" aria-label="Ampliar painel de service desk operacional">
-                            <img class="showcase-image" src="/images/portfolio-service-desk.png" alt="Painel de service desk operacional">
-                            <span class="showcase-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="showcase-zoom-label">Clique para ampliar</span><span class="showcase-zoom-label-mobile">Ampliar</span></span>
-                        </button>
-                    </div>
-                </div> *@
+                <div class="mt-8 grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
+                    <div class="signal-card rounded-[30px] p-6 md:p-8">
+                        <p class="text-[0.68rem] uppercase tracking-[0.34em] text-sky-200/90">Atendimento estruturado</p>
+                        <h2 class="mt-4 max-w-2xl text-2xl md:text-3xl font-bold leading-tight">
+                            Uma entrada profissional para sua empresa sair do improviso e ganhar previsibilidade.
+                        </h2>
+                        <p class="mt-4 max-w-3xl text-sm md:text-base leading-8 text-slate-300">
+                            Antes de falar de plano, entendemos onde a operação perde tempo, o que mais afeta a equipe e como priorizar as primeiras correções. A ideia é simples: organizar a TI para o dono voltar a focar no negócio.
+                        </p>
 
-                <div class="mt-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-                    <div class="max-w-3xl">
-                        <p class="mb-2 text-[0.65rem] uppercase tracking-[0.35em] text-sky-200/90">Painel em destaque</p>
-                        <h2 class="text-2xl md:text-3xl font-bold">Service Desk Operacional</h2>
-                        <p class="mt-2 text-sm md:text-base text-slate-200/90">
-                            Organização do atendimento para ninguém ficar horas esperando uma solução.
+                        <div class="mt-8 grid gap-4 md:grid-cols-3">
+                            <div class="signal-step rounded-[24px] p-5">
+                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">1. Diagnóstico</p>
+                                <h3 class="mt-3 text-lg font-semibold text-white">Mapeamos os gargalos</h3>
+                                <p class="mt-3 text-sm leading-7 text-slate-300">Entendemos onde estão as falhas recorrentes, os impactos na operação e o que precisa entrar na frente.</p>
+                            </div>
+                            <div class="signal-step rounded-[24px] p-5">
+                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">2. Prioridades</p>
+                                <h3 class="mt-3 text-lg font-semibold text-white">Definimos um plano de ação</h3>
+                                <p class="mt-3 text-sm leading-7 text-slate-300">Traduzimos os riscos em ações práticas para reduzir parada, melhorar resposta e trazer mais estabilidade.</p>
+                            </div>
+                            <div class="signal-step rounded-[24px] p-5">
+                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">3. Rotina</p>
+                                <h3 class="mt-3 text-lg font-semibold text-white">Acompanhamos continuamente</h3>
+                                <p class="mt-3 text-sm leading-7 text-slate-300">Criamos uma rotina de suporte e prevenção para os mesmos problemas não voltarem a travar a equipe.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap gap-3 text-sm text-slate-200">
+                            <div class="trust-chip rounded-full px-4 py-2">Foco em pequenas e médias empresas de Vinhedo e região</div>
+                            <div class="trust-chip rounded-full px-4 py-2">Atendimento remoto e acompanhamento contínuo</div>
+                            <div class="trust-chip rounded-full px-4 py-2">Linguagem simples, prioridade clara e execução prática</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card rounded-[30px] p-6 md:p-8">
+                        <p class="text-[0.68rem] uppercase tracking-[0.34em] text-emerald-200/90">Contato rápido</p>
+                        <h2 class="mt-4 text-2xl md:text-3xl font-bold leading-tight">
+                            Peça um retorno técnico sem enrolação.
+                        </h2>
+                        <p class="mt-4 text-sm md:text-base leading-8 text-slate-300">
+                            Preencha em menos de um minuto. Ao enviar, abrimos o WhatsApp da SAM SOLUTION com sua mensagem pronta para agilizar o atendimento.
+                        </p>
+
+                        <form class="mt-6 grid gap-4" data-lead-form data-whatsapp-number="5519986093543">
+                            <div class="grid gap-4 md:grid-cols-2">
+                                <label>
+                                    <span class="lead-label">Nome</span>
+                                    <input class="lead-input" type="text" name="nome" placeholder="Seu nome" required>
+                                </label>
+                                <label>
+                                    <span class="lead-label">Empresa</span>
+                                    <input class="lead-input" type="text" name="empresa" placeholder="Nome da empresa">
+                                </label>
+                            </div>
+
+                            <div class="grid gap-4 md:grid-cols-2">
+                                <label>
+                                    <span class="lead-label">WhatsApp</span>
+                                    <input class="lead-input" type="tel" name="telefone" placeholder="(19) 99999-9999" required>
+                                </label>
+                                <label>
+                                    <span class="lead-label">E-mail</span>
+                                    <input class="lead-input" type="email" name="email" placeholder="voce@empresa.com.br">
+                                </label>
+                            </div>
+
+                            <label>
+                                <span class="lead-label">Principal desafio hoje</span>
+                                <textarea class="lead-textarea" name="desafio" placeholder="Ex.: internet instável, equipe parada esperando suporte, computadores travando, falta de rotina preventiva..." required></textarea>
+                            </label>
+
+                            <button type="submit" class="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-6 py-4 font-semibold text-white shadow-lg shadow-emerald-950/40 transition hover:scale-[1.01]">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Enviar diagnóstico pelo WhatsApp
+                            </button>
+                        </form>
+
+                        <p class="mt-4 text-xs leading-6 text-slate-400">
+                            Se preferir, você também pode falar direto pelo <a class="text-sky-300 hover:text-sky-200" href="https://wa.me/5519986093543">WhatsApp</a> ou pelo e-mail <a class="text-sky-300 hover:text-sky-200" href="mailto:samsolution.150824@gmail.com">samsolution.150824@gmail.com</a>.
                         </p>
                     </div>
-                    <div class="flex flex-col items-start gap-4 xl:items-end">
-                        <div class="inline-flex items-center rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-sm text-slate-200">
-                            <i class="fa-solid fa-magnifying-glass-plus mr-2 text-sky-300"></i>
-                            Clique na imagem para ampliar
-                        </div>
-                    </div>
                 </div>
 
-                <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     <div class="metric-card rounded-[28px] p-5">
                         <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Monitoramento</p>
                         <p class="mt-5 text-4xl font-bold text-sky-300">24/7</p>
@@ -365,14 +344,6 @@
                     <div class="metric-card rounded-[28px] p-5">
                         <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Benefício</p>
                         <p class="mt-5 text-sm leading-7 text-slate-300">Menos surpresa, mais previsibilidade e mais controle para a empresa tomar decisão sem apagar incêndio.</p>
-                    </div>
-                    <div class="metric-card rounded-[28px] p-5">
-                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Material Completo</p>
-                        <p class="mt-5 text-sm leading-7 text-slate-300">Leve a apresentação para avaliar internamente e compartilhar com sócios ou gestores.</p>
-                        <a href="/images/it-management.pdf" download class="mt-5 inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-4 py-3 font-semibold text-white shadow-lg shadow-emerald-950/40">
-                            <i class="fa-solid fa-file-arrow-down"></i>
-                            Baixar apresentação
-                        </a>
                     </div>
                 </div>
             </div>
@@ -409,26 +380,6 @@
             </div>
         </div>
     </section>
-
-    <div class="lightbox" data-lightbox hidden aria-hidden="true">
-        <button type="button" class="lightbox-backdrop" data-lightbox-close aria-label="Fechar visualização ampliada"></button>
-        <div class="lightbox-panel">
-            <button type="button" class="lightbox-close" data-lightbox-close aria-label="Fechar visualização ampliada">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <img class="lightbox-image" src="" alt="" data-lightbox-image>
-            <div class="flex flex-col gap-3 border-t border-white/10 px-5 py-4 md:flex-row md:items-center md:justify-between">
-                <div>
-                    <p class="text-[0.68rem] uppercase tracking-[0.32em] text-sky-200/90">Visual ampliado</p>
-                    <h3 class="mt-1 text-lg font-semibold text-white" data-lightbox-title>Prévia do painel</h3>
-                </div>
-                <a href="#" data-lightbox-download download class="inline-flex items-center gap-2 rounded-2xl bg-sky-500 px-4 py-3 font-semibold text-slate-950">
-                    <i class="fa-solid fa-download"></i>
-                    Baixar imagem
-                </a>
-            </div>
-        </div>
-    </div>
 
     <section class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
@@ -537,26 +488,43 @@
         </div>
     </section>
 
-    <section class="py-24 text-center bg-blue-600 fade-up">
-        <div class="max-w-3xl mx-auto">
-            <p class="text-xs uppercase tracking-[0.32em] text-blue-100 mb-3">Diagnóstico gratuito</p>
-            <h2 class="text-3xl md:text-4xl font-semibold mb-6">Pare de perder tempo e dinheiro com problemas de TI.</h2>
-            <p class="mb-8 text-blue-100 text-base md:text-lg leading-8">
-                Solicite agora um diagnóstico gratuito e descubra como evitar falhas, prejuízos e perda de tempo na sua operação.
-            </p>
-            <div class="flex justify-center gap-4 flex-wrap">
-                <a href="https://wa.me/5519986093543"
-                   onclick="trackClick('cta_whatsapp')"
-                   class="bg-white text-blue-600 px-10 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition inline-flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    Solicitar diagnóstico gratuito
-                </a>
-                <a href="mailto:samsolution.150824@gmail.com"
-                   onclick="trackClick('cta_email')"
-                   class="border border-white/40 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 transition inline-flex items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i>
-                    Receber contato por e-mail
-                </a>
+    <section class="py-24 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="cta-panel fade-up rounded-[32px] p-8 md:p-10 lg:p-12">
+                <div class="grid gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-center">
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.32em] text-sky-200 mb-3">Diagnóstico gratuito</p>
+                        <h2 class="text-3xl md:text-4xl font-semibold leading-tight">Sua empresa não precisa esperar a próxima falha para organizar a TI.</h2>
+                        <p class="mt-6 max-w-3xl text-base md:text-lg leading-8 text-slate-300">
+                            Solicite um diagnóstico inicial e entenda onde sua operação perde tempo, quais riscos precisam vir primeiro e como estruturar um suporte mais previsível.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="https://wa.me/5519986093543"
+                               onclick="trackClick('cta_whatsapp')"
+                               class="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-8 py-4 font-semibold text-white shadow-lg shadow-emerald-950/40 transition hover:scale-105">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Solicitar diagnóstico gratuito
+                            </a>
+                            <a href="mailto:samsolution.150824@gmail.com"
+                               onclick="trackClick('cta_email')"
+                               class="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-slate-950/55 px-8 py-4 font-semibold text-white transition hover:bg-white/5">
+                                <i class="fa-solid fa-envelope"></i>
+                                Receber contato por e-mail
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-4 text-left">
+                        <div class="signal-step rounded-[24px] p-5">
+                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">Para quem faz sentido</p>
+                            <p class="mt-3 text-sm leading-7 text-slate-300">Empresas que já sentem impacto com lentidão, quedas, falta de acompanhamento ou equipe parada esperando suporte.</p>
+                        </div>
+                        <div class="signal-step rounded-[24px] p-5">
+                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">O que você recebe</p>
+                            <p class="mt-3 text-sm leading-7 text-slate-300">Uma visão prática do cenário atual, prioridades recomendadas e próximos passos para estabilizar a operação.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -640,80 +608,53 @@
 
     <script>
         (() => {
-            const triggers = Array.from(document.querySelectorAll('[data-lightbox-trigger]'));
-            const lightbox = document.querySelector('[data-lightbox]');
-            const lightboxImage = document.querySelector('[data-lightbox-image]');
-            const lightboxTitle = document.querySelector('[data-lightbox-title]');
-            const lightboxDownload = document.querySelector('[data-lightbox-download]');
-            const lightboxCloseButtons = Array.from(document.querySelectorAll('[data-lightbox-close]'));
-            if (!triggers.length || !lightbox || !lightboxImage || !lightboxTitle || !lightboxDownload) {
+            const leadForms = Array.from(document.querySelectorAll('[data-lead-form]'));
+            if (!leadForms.length) {
                 return;
             }
 
-            let isLightboxOpen = false;
-            let previousFocusedElement = null;
+            leadForms.forEach((form) => {
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    if (form.dataset.submitting == "true") {
+                        return;
+                    }
 
-            function openLightbox(trigger) {
-                previousFocusedElement = document.activeElement;
-                isLightboxOpen = true;
-                lightboxImage.src = trigger.dataset.imageSrc || '';
-                lightboxImage.alt = trigger.dataset.imageAlt || trigger.querySelector('img')?.alt || '';
-                lightboxTitle.textContent = trigger.dataset.lightboxTitle || lightboxImage.alt || 'Imagem ampliada';
-                lightboxDownload.href = trigger.dataset.imageSrc || '#';
+                    const data = new FormData(form);
+                    const whatsappNumber = form.getAttribute('data-whatsapp-number') || '5519986093543';
+                    const nome = String(data.get('nome') || '').trim();
+                    const empresa = String(data.get('empresa') || '').trim();
+                    const telefone = String(data.get('telefone') || '').trim();
+                    const email = String(data.get('email') || '').trim();
+                    const desafio = String(data.get('desafio') || '').trim();
+                    const submitButton = form.querySelector('button[type="submit"]');
 
-                if (trigger.dataset.downloadName) {
-                    lightboxDownload.setAttribute('download', trigger.dataset.downloadName);
-                } else {
-                    lightboxDownload.removeAttribute('download');
-                }
+                    const messageLines = [
+                        'Olá, vim pelo site da SAM SOLUTION e gostaria de solicitar um diagnóstico de TI.',
+                        '',
+                        `Nome: ${nome || 'Não informado'}`,
+                        `Empresa: ${empresa || 'Não informado'}`,
+                        `WhatsApp: ${telefone || 'Não informado'}`,
+                        `E-mail: ${email || 'Não informado'}`,
+                        `Principal desafio: ${desafio || 'Não informado'}`
+                    ];
 
-                lightbox.hidden = false;
-                lightbox.setAttribute('aria-hidden', 'false');
-                document.body.classList.add('lightbox-open');
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(messageLines.join('\n'))}`;
 
-                window.requestAnimationFrame(() => {
-                    lightbox.classList.add('is-open');
-                    lightbox.querySelector('.lightbox-close')?.focus();
+                    if (typeof trackClick === 'function') {
+                        trackClick('lead_form_whatsapp');
+                    }
+
+                    form.dataset.submitting = 'true';
+                    if (submitButton instanceof HTMLButtonElement) {
+                        submitButton.disabled = true;
+                        submitButton.textContent = 'Abrindo WhatsApp...';
+                    }
+
+                    window.location.assign(whatsappUrl);
                 });
-            }
-
-            function closeLightbox() {
-                if (!lightbox || lightbox.hidden) {
-                    return;
-                }
-
-                isLightboxOpen = false;
-                lightbox.classList.remove('is-open');
-                lightbox.setAttribute('aria-hidden', 'true');
-                document.body.classList.remove('lightbox-open');
-
-                window.setTimeout(() => {
-                    lightbox.hidden = true;
-                    lightboxImage?.removeAttribute('src');
-                }, 180);
-
-                if (previousFocusedElement && typeof previousFocusedElement.focus === 'function') {
-                    previousFocusedElement.focus();
-                }
-            }
-
-            triggers.forEach((trigger) => {
-                trigger.addEventListener('click', () => {
-                    openLightbox(trigger);
-                });
-            });
-
-            lightboxCloseButtons.forEach((button) => {
-                button.addEventListener('click', closeLightbox);
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && isLightboxOpen) {
-                    closeLightbox();
-                }
             });
         })();
     </script>
 </body>
 </html>
-
