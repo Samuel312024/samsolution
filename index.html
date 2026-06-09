@@ -145,6 +145,30 @@
             resize: vertical;
         }
 
+        .lead-field {
+            display: block;
+        }
+
+        .lead-input.is-invalid,
+        .lead-textarea.is-invalid {
+            border-color: rgba(248, 113, 113, 0.72);
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+        }
+
+        .lead-error {
+            display: block;
+            min-height: 1.3rem;
+            margin-top: 0.55rem;
+            font-size: 0.78rem;
+            color: #fca5a5;
+        }
+
+        .lead-submit:disabled {
+            cursor: wait;
+            opacity: 0.84;
+            transform: none;
+        }
+
         .cta-panel {
             background:
                 linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(37, 99, 235, 0.18)),
@@ -285,35 +309,40 @@
                             Preencha em menos de um minuto. Ao enviar, abrimos o WhatsApp da SAM SOLUTION com sua mensagem pronta para agilizar o atendimento.
                         </p>
 
-                        <form class="mt-6 grid gap-4" data-lead-form data-whatsapp-number="5519986093543">
+                        <form class="mt-6 grid gap-4" data-lead-form data-whatsapp-number="5519986093543" novalidate>
                             <div class="grid gap-4 md:grid-cols-2">
-                                <label>
+                                <label class="lead-field">
                                     <span class="lead-label">Nome</span>
-                                    <input class="lead-input" type="text" name="nome" placeholder="Seu nome" required>
+                                    <input class="lead-input" type="text" name="nome" placeholder="Seu nome" autocomplete="name" minlength="3" required aria-describedby="lead-nome-error">
+                                    <span id="lead-nome-error" class="lead-error" data-error-for="nome" aria-live="polite"></span>
                                 </label>
-                                <label>
+                                <label class="lead-field">
                                     <span class="lead-label">Empresa</span>
-                                    <input class="lead-input" type="text" name="empresa" placeholder="Nome da empresa">
+                                    <input class="lead-input" type="text" name="empresa" placeholder="Nome da empresa" autocomplete="organization" aria-describedby="lead-empresa-error">
+                                    <span id="lead-empresa-error" class="lead-error" data-error-for="empresa" aria-live="polite"></span>
                                 </label>
                             </div>
 
                             <div class="grid gap-4 md:grid-cols-2">
-                                <label>
+                                <label class="lead-field">
                                     <span class="lead-label">WhatsApp</span>
-                                    <input class="lead-input" type="tel" name="telefone" placeholder="(19) 99999-9999" required>
+                                    <input class="lead-input" type="tel" name="telefone" placeholder="(19) 99999-9999" inputmode="numeric" autocomplete="tel" maxlength="15" required aria-describedby="lead-telefone-error">
+                                    <span id="lead-telefone-error" class="lead-error" data-error-for="telefone" aria-live="polite"></span>
                                 </label>
-                                <label>
+                                <label class="lead-field">
                                     <span class="lead-label">E-mail</span>
-                                    <input class="lead-input" type="email" name="email" placeholder="voce@empresa.com.br">
+                                    <input class="lead-input" type="email" name="email" placeholder="voce@empresa.com.br" inputmode="email" autocomplete="email" aria-describedby="lead-email-error">
+                                    <span id="lead-email-error" class="lead-error" data-error-for="email" aria-live="polite"></span>
                                 </label>
                             </div>
 
-                            <label>
+                            <label class="lead-field">
                                 <span class="lead-label">Principal desafio hoje</span>
-                                <textarea class="lead-textarea" name="desafio" placeholder="Ex.: internet instável, equipe parada esperando suporte, computadores travando, falta de rotina preventiva..." required></textarea>
+                                <textarea class="lead-textarea" name="desafio" placeholder="Ex.: internet instável, equipe parada esperando suporte, computadores travando, falta de rotina preventiva..." minlength="12" required aria-describedby="lead-desafio-error"></textarea>
+                                <span id="lead-desafio-error" class="lead-error" data-error-for="desafio" aria-live="polite"></span>
                             </label>
 
-                            <button type="submit" class="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-6 py-4 font-semibold text-white shadow-lg shadow-emerald-950/40 transition hover:scale-[1.01]">
+                            <button type="submit" class="lead-submit mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-6 py-4 font-semibold text-white shadow-lg shadow-emerald-950/40 transition hover:scale-[1.01]">
                                 <i class="fa-brands fa-whatsapp"></i>
                                 Enviar diagnóstico pelo WhatsApp
                             </button>
@@ -608,10 +637,129 @@
                 return;
             }
 
+            function getDigits(value) {
+                return value.replace(/\D/g, '').slice(0, 11);
+            }
+
+            function formatPhone(value) {
+                const digits = getDigits(value);
+
+                if (!digits) {
+                    return '';
+                }
+
+                if (digits.length <= 2) {
+                    return `(${digits}`;
+                }
+
+                if (digits.length <= 6) {
+                    return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+                }
+
+                if (digits.length <= 10) {
+                    return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+                }
+
+                return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+            }
+
+            function isValidEmail(value) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(value);
+            }
+
+            function setFieldError(form, field, message) {
+                const errorElement = form.querySelector(`[data-error-for="${field.name}"]`);
+                const hasError = Boolean(message);
+
+                field.classList.toggle('is-invalid', hasError);
+                field.setAttribute('aria-invalid', String(hasError));
+
+                if (errorElement) {
+                    errorElement.textContent = message;
+                }
+            }
+
+            function validateField(form, field) {
+                const value = field.value.trim();
+
+                switch (field.name) {
+                    case 'nome':
+                        if (value.length < 3) {
+                            return 'Informe seu nome para seguirmos com o contato.';
+                        }
+                        return '';
+                    case 'telefone':
+                        if (getDigits(value).length < 10) {
+                            return 'Informe um WhatsApp com DDD válido.';
+                        }
+                        return '';
+                    case 'email':
+                        if (!value) {
+                            return '';
+                        }
+                        if (!isValidEmail(value)) {
+                            return 'Digite um e-mail válido ou deixe este campo em branco.';
+                        }
+                        return '';
+                    case 'desafio':
+                        if (value.length < 12) {
+                            return 'Descreva rapidamente o principal desafio da sua empresa.';
+                        }
+                        return '';
+                    default:
+                        if (field.required && !value) {
+                            return 'Este campo é obrigatório.';
+                        }
+                        return '';
+                }
+            }
+
             leadForms.forEach((form) => {
+                const fields = Array.from(form.querySelectorAll('input, textarea'));
+                const phoneInput = form.querySelector('input[name="telefone"]');
+
+                phoneInput?.addEventListener('input', () => {
+                    phoneInput.value = formatPhone(phoneInput.value);
+
+                    if (phoneInput.dataset.touched === 'true') {
+                        setFieldError(form, phoneInput, validateField(form, phoneInput));
+                    }
+                });
+
+                fields.forEach((field) => {
+                    field.addEventListener('blur', () => {
+                        field.dataset.touched = 'true';
+                        setFieldError(form, field, validateField(form, field));
+                    });
+
+                    if (field !== phoneInput) {
+                        field.addEventListener('input', () => {
+                            if (field.dataset.touched === 'true') {
+                                setFieldError(form, field, validateField(form, field));
+                            }
+                        });
+                    }
+                });
+
                 form.addEventListener('submit', (event) => {
                     event.preventDefault();
                     if (form.dataset.submitting === 'true') {
+                        return;
+                    }
+
+                    let firstInvalidField = null;
+                    fields.forEach((field) => {
+                        field.dataset.touched = 'true';
+                        const errorMessage = validateField(form, field);
+                        setFieldError(form, field, errorMessage);
+
+                        if (errorMessage && !firstInvalidField) {
+                            firstInvalidField = field;
+                        }
+                    });
+
+                    if (firstInvalidField) {
+                        firstInvalidField.focus();
                         return;
                     }
 
