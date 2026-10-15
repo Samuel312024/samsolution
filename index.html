@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sua empresa funcionando sem parar, sem dor de cabeça com TI. A SAM SOLUTION oferece suporte preventivo, monitoramento, manutenção e diagnóstico gratuito para empresas em Vinhedo e região.">
-    <title>SAM SOLUTION | Diagnóstico Gratuito e Suporte Preventivo de TI</title>
+    <meta name="description" content="SAM SOLUTION: soluções em tecnologias. Manutenção, upgrade e suporte remoto para PCs, notebooks e impressoras, com atendimento a domicílio, orçamento sem compromisso e garantia no serviço.">
+    <title>SAM SOLUTION | Soluções em tecnologias</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Cormorant+Garamond:wght@500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E17CGRFC2B"></script>
@@ -29,115 +29,89 @@
 
     <style>
         :root {
-            --bg-base: #020617;
-            --panel: rgba(15, 23, 42, 0.74);
-            --panel-strong: rgba(15, 23, 42, 0.92);
-            --border: rgba(148, 163, 184, 0.18);
-            --accent: #38bdf8;
-            --accent-strong: #2563eb;
+            --paper: #f4f5fa;
+            --indigo: #4a46a6;
+            --ink: #16161d;
+            --line: #d9d9ee;
         }
 
         body {
-            font-family: "Sora", sans-serif;
-            background:
-                radial-gradient(circle at top, rgba(37, 99, 235, 0.22), transparent 30%),
-                radial-gradient(circle at 15% 20%, rgba(14, 165, 233, 0.14), transparent 20%),
-                linear-gradient(180deg, #020617 0%, #020617 44%, #030712 100%);
+            font-family: "Quicksand", sans-serif;
+            font-weight: 500;
+            color: var(--ink);
+            background-color: var(--paper);
+            background-image: radial-gradient(#d4d5e8 1px, transparent 1px);
+            background-size: 22px 22px;
         }
 
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
+        .wordmark {
+            font-weight: 700;
+            font-size: clamp(2.7rem, 10.5vw, 7rem);
+            line-height: 1;
+            letter-spacing: -0.015em;
         }
 
-        .fade-up.active {
-            opacity: 1;
-            transform: translateY(0);
+        .tagline {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+            letter-spacing: 0.01em;
         }
 
-        .hover-glow:hover {
-            box-shadow: 0 0 28px rgba(59, 130, 246, 0.18);
+        .bullets li {
+            position: relative;
+            padding-left: 1.6rem;
+            line-height: 1.5;
         }
 
-        .glass-panel {
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.94) 0%, rgba(15, 23, 42, 0.78) 100%);
-            border: 1px solid var(--border);
-            box-shadow: 0 32px 80px rgba(2, 6, 23, 0.55);
-            backdrop-filter: blur(18px);
-        }
-
-        .hero-orb {
+        .bullets li::before {
+            content: "";
             position: absolute;
-            border-radius: 999px;
-            filter: blur(100px);
-            opacity: 0.38;
-            pointer-events: none;
+            left: 0;
+            top: 0.55em;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-radius: 2px;
+            background: var(--indigo);
         }
 
-        .metric-card {
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.72));
-            border: 1px solid rgba(96, 165, 250, 0.14);
+        .btn:focus-visible,
+        a:focus-visible {
+            outline: 3px solid var(--indigo);
+            outline-offset: 3px;
         }
 
-        .signal-card {
-            background:
-                linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(6, 12, 24, 0.94)),
-                radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 32%);
-            border: 1px solid rgba(96, 165, 250, 0.14);
-            box-shadow: 0 30px 60px rgba(2, 6, 23, 0.3);
-        }
-
-        .signal-step {
-            border: 1px solid rgba(148, 163, 184, 0.12);
-            background: rgba(2, 6, 23, 0.34);
-        }
-
-        .contact-card {
-            background:
-                linear-gradient(180deg, rgba(8, 15, 29, 0.98), rgba(3, 7, 18, 0.98)),
-                radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 30%);
-            border: 1px solid rgba(56, 189, 248, 0.18);
-            box-shadow: 0 34px 70px rgba(2, 6, 23, 0.4);
-        }
-
-        .trust-chip {
-            border: 1px solid rgba(148, 163, 184, 0.16);
-            background: rgba(15, 23, 42, 0.72);
-        }
-
+        /* formulário de contato */
         .lead-label {
             display: block;
-            margin-bottom: 0.55rem;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #bae6fd;
+            margin-bottom: 0.45rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--ink);
         }
 
         .lead-input,
         .lead-textarea {
             width: 100%;
-            border-radius: 18px;
-            border: 1px solid rgba(148, 163, 184, 0.18);
-            background: rgba(15, 23, 42, 0.82);
-            color: #e2e8f0;
-            padding: 0.95rem 1rem;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            border-radius: 16px;
+            border: 1.5px solid var(--line);
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+            padding: 0.9rem 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         .lead-input::placeholder,
         .lead-textarea::placeholder {
-            color: #64748b;
+            color: #6b6c8a;
         }
 
         .lead-input:focus,
         .lead-textarea:focus {
             outline: none;
-            border-color: rgba(56, 189, 248, 0.62);
-            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.14);
-            background: rgba(15, 23, 42, 0.96);
+            border-color: var(--indigo);
+            box-shadow: 0 0 0 3px rgba(74, 70, 166, 0.16);
         }
 
         .lead-textarea {
@@ -151,30 +125,23 @@
 
         .lead-input.is-invalid,
         .lead-textarea.is-invalid {
-            border-color: rgba(248, 113, 113, 0.72);
-            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
         }
 
         .lead-error {
             display: block;
             min-height: 1.3rem;
-            margin-top: 0.55rem;
-            font-size: 0.78rem;
-            color: #fca5a5;
+            margin-top: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #b91c1c;
         }
 
         .lead-submit:disabled {
             cursor: wait;
-            opacity: 0.84;
+            opacity: 0.85;
             transform: none;
-        }
-
-        .cta-panel {
-            background:
-                linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(37, 99, 235, 0.18)),
-                linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
-            border: 1px solid rgba(96, 165, 250, 0.16);
-            box-shadow: 0 38px 80px rgba(2, 6, 23, 0.34);
         }
 
         @media (max-width: 768px) {
@@ -183,438 +150,298 @@
                 font-size: 16px;
             }
         }
+
+        @keyframes pulse-glow { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+        .pulse { animation: pulse-glow 3.2s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) { .pulse { animation: none; } }
+
+        /* seção mantida: efeito original */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up { opacity: 1; transform: none; transition: none; }
+        }
     </style>
 </head>
 
-<body class="text-white scroll-smooth overflow-x-hidden">
-    <div class="hero-orb h-64 w-64 bg-sky-500/40 top-24 -left-10"></div>
-    <div class="hero-orb h-80 w-80 bg-blue-600/30 top-0 right-0"></div>
+<body class="scroll-smooth overflow-x-hidden">
 
     <a href="https://wa.me/5519986093543"
        onclick="trackClick('whatsapp_fixo')"
-       aria-label="Solicitar diagnóstico gratuito no WhatsApp"
-       class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 px-5 py-3 rounded-full shadow-lg text-xl z-50 transition hover:scale-110">
+       aria-label="Pedir orçamento no WhatsApp"
+       class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-lg text-xl z-50 transition hover:scale-110">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <section class="relative px-4 pt-10 pb-24">
-        <div class="mx-auto relative z-10 max-w-[98rem]">
-            <div class="fade-up glass-panel rounded-[32px] p-4 md:p-6 lg:p-8">
-                <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center mb-8">
-                    <div>
-                        <div class="inline-flex items-center gap-3 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-emerald-200">
-                            <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-                            Diagnóstico gratuito para empresas em Vinhedo e região
-                        </div>
+    <!-- HERO -->
+    <header class="relative overflow-hidden px-4 pt-16 pb-14 md:pt-24 md:pb-20">
+        <svg class="pointer-events-none absolute left-0 top-8 hidden md:block" width="300" height="170" viewBox="0 0 300 170" fill="none" stroke="#cfcdea" stroke-width="2" aria-hidden="true">
+            <path d="M0 50H120L152 14H262"/><circle cx="270" cy="14" r="7"/>
+            <path d="M0 130H70L92 108H210"/><circle cx="218" cy="108" r="6"/>
+        </svg>
+        <svg class="pointer-events-none absolute right-0 top-8 hidden -scale-x-100 md:block" width="300" height="170" viewBox="0 0 300 170" fill="none" stroke="#cfcdea" stroke-width="2" aria-hidden="true">
+            <path d="M0 50H120L152 14H262"/><circle cx="270" cy="14" r="7"/>
+            <path d="M0 130H70L92 108H210"/><circle cx="218" cy="108" r="6"/>
+        </svg>
 
-                        <img src="/images/samsolution.jpg" alt="Logo da SAM SOLUTION" class="mt-6 w-24 md:w-28 rounded-[24px] border border-sky-400/15 shadow-xl shadow-sky-950/30">
-                        <p class="text-sky-300 mt-6 mb-3 uppercase tracking-[0.38em] text-xs md:text-sm">SAM SOLUTION</p>
+        <div class="relative mx-auto max-w-5xl text-center">
+            <h1 class="wordmark"><span style="color: var(--indigo)">SAM</span> SOLUTION</h1>
+            <p class="tagline mt-5 text-slate-700">Soluções em tecnologias</p>
+            <div class="mx-auto mt-4 h-1 w-20 rounded-full" style="background: var(--indigo)"></div>
 
-                        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-5 max-w-4xl">
-                            Sua empresa funcionando sem parar, sem dor de cabeça com TI.
-                        </h1>
-                        <p class="text-slate-300 max-w-3xl mb-6 text-base md:text-lg leading-8">
-                            Cuidamos de toda a tecnologia da sua empresa para evitar falhas, prejuízos e perda de tempo.
-                        </p>
-                        <p class="max-w-3xl rounded-[28px] border border-slate-800 bg-slate-950/55 px-5 py-4 text-sm md:text-base leading-7 text-slate-200">
-                            Se sua empresa já passou por computador travando, internet instável, sistema fora do ar ou funcionários parados esperando suporte, você precisa de uma TI que previne problemas antes que eles aconteçam.
-                        </p>
-
-                        <div class="flex justify-start gap-4 flex-wrap mt-8">
-                            <a href="https://wa.me/5519986093543"
-                               onclick="trackClick('whatsapp_hero')"
-                               class="inline-flex items-center gap-2 bg-green-500 px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition shadow-lg shadow-green-950/40">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                Solicitar diagnóstico gratuito
-                            </a>
-
-                            <a href="mailto:samsolution.150824@gmail.com"
-                               onclick="trackClick('email_hero')"
-                               class="inline-flex items-center gap-2 bg-blue-600 px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition shadow-lg shadow-blue-950/40">
-                                <i class="fa-solid fa-envelope"></i>
-                                Falar com especialista
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="grid gap-4">
-                        <div class="rounded-[28px] border border-blue-500/30 bg-blue-500/10 p-6 md:p-7 shadow-xl shadow-blue-950/20">
-                            <p class="text-xs uppercase tracking-[0.3em] text-sky-200">Suporte preventivo de TI</p>
-                            <h2 class="mt-4 text-2xl md:text-3xl font-bold leading-tight">
-                                Não esperamos o problema acontecer.
-                            </h2>
-                            <p class="mt-4 text-slate-200 leading-7">
-                                Monitoramos, prevenimos e resolvemos antes que sua empresa pare.
-                            </p>
-                            <ul class="mt-6 space-y-3 text-sm text-slate-200">
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
-                                    Monitoramento contínuo para identificar riscos antes do usuário sentir o impacto.
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
-                                    Manutenção preventiva para reduzir falhas recorrentes em computadores e rede.
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
-                                    Segurança, backup e acompanhamento contínuo por um valor fixo mensal.
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="mt-8 grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
-                    <div class="signal-card rounded-[30px] p-6 md:p-8">
-                        <p class="text-[0.68rem] uppercase tracking-[0.34em] text-sky-200/90">Atendimento estruturado</p>
-                        <h2 class="mt-4 max-w-2xl text-2xl md:text-3xl font-bold leading-tight">
-                            Uma entrada profissional para sua empresa sair do improviso e ganhar previsibilidade.
-                        </h2>
-                        <p class="mt-4 max-w-3xl text-sm md:text-base leading-8 text-slate-300">
-                            Antes de falar de plano, entendemos onde a operação perde tempo, o que mais afeta a equipe e como priorizar as primeiras correções. A ideia é simples: organizar a TI para o dono voltar a focar no negócio.
-                        </p>
-
-                        <div class="mt-8 grid gap-4 md:grid-cols-3">
-                            <div class="signal-step rounded-[24px] p-5">
-                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">1. Diagnóstico</p>
-                                <h3 class="mt-3 text-lg font-semibold text-white">Mapeamos os gargalos</h3>
-                                <p class="mt-3 text-sm leading-7 text-slate-300">Entendemos onde estão as falhas recorrentes, os impactos na operação e o que precisa entrar na frente.</p>
-                            </div>
-                            <div class="signal-step rounded-[24px] p-5">
-                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">2. Prioridades</p>
-                                <h3 class="mt-3 text-lg font-semibold text-white">Definimos um plano de ação</h3>
-                                <p class="mt-3 text-sm leading-7 text-slate-300">Traduzimos os riscos em ações práticas para reduzir parada, melhorar resposta e trazer mais estabilidade.</p>
-                            </div>
-                            <div class="signal-step rounded-[24px] p-5">
-                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">3. Rotina</p>
-                                <h3 class="mt-3 text-lg font-semibold text-white">Acompanhamos continuamente</h3>
-                                <p class="mt-3 text-sm leading-7 text-slate-300">Criamos uma rotina de suporte e prevenção para os mesmos problemas não voltarem a travar a equipe.</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 flex flex-wrap gap-3 text-sm text-slate-200">
-                            <div class="trust-chip rounded-full px-4 py-2">Foco em pequenas e médias empresas de Vinhedo e região</div>
-                            <div class="trust-chip rounded-full px-4 py-2">Atendimento remoto e acompanhamento contínuo</div>
-                            <div class="trust-chip rounded-full px-4 py-2">Linguagem simples, prioridade clara e execução prática</div>
-                        </div>
-                    </div>
-
-                    <div class="contact-card rounded-[30px] p-6 md:p-8">
-                        <p class="text-[0.68rem] uppercase tracking-[0.34em] text-emerald-200/90">Contato rápido</p>
-                        <h2 class="mt-4 text-2xl md:text-3xl font-bold leading-tight">
-                            Peça um retorno técnico sem enrolação.
-                        </h2>
-                        <p class="mt-4 text-sm md:text-base leading-8 text-slate-300">
-                            Preencha em menos de um minuto. Ao enviar, abrimos o WhatsApp da SAM SOLUTION com sua mensagem pronta para agilizar o atendimento.
-                        </p>
-
-                        <form class="mt-6 grid gap-4" data-lead-form data-whatsapp-number="5519986093543" novalidate>
-                            <div class="grid gap-4 md:grid-cols-2">
-                                <label class="lead-field">
-                                    <span class="lead-label">Nome</span>
-                                    <input class="lead-input" type="text" name="nome" placeholder="Seu nome" autocomplete="name" minlength="3" required aria-describedby="lead-nome-error">
-                                    <span id="lead-nome-error" class="lead-error" data-error-for="nome" aria-live="polite"></span>
-                                </label>
-                                <label class="lead-field">
-                                    <span class="lead-label">Empresa</span>
-                                    <input class="lead-input" type="text" name="empresa" placeholder="Nome da empresa" autocomplete="organization" aria-describedby="lead-empresa-error">
-                                    <span id="lead-empresa-error" class="lead-error" data-error-for="empresa" aria-live="polite"></span>
-                                </label>
-                            </div>
-
-                            <div class="grid gap-4 md:grid-cols-2">
-                                <label class="lead-field">
-                                    <span class="lead-label">WhatsApp</span>
-                                    <input class="lead-input" type="tel" name="telefone" placeholder="(19) 99999-9999" inputmode="numeric" autocomplete="tel" maxlength="15" required aria-describedby="lead-telefone-error">
-                                    <span id="lead-telefone-error" class="lead-error" data-error-for="telefone" aria-live="polite"></span>
-                                </label>
-                                <label class="lead-field">
-                                    <span class="lead-label">E-mail</span>
-                                    <input class="lead-input" type="email" name="email" placeholder="voce@empresa.com.br" inputmode="email" autocomplete="email" aria-describedby="lead-email-error">
-                                    <span id="lead-email-error" class="lead-error" data-error-for="email" aria-live="polite"></span>
-                                </label>
-                            </div>
-
-                            <label class="lead-field">
-                                <span class="lead-label">Principal desafio hoje</span>
-                                <textarea class="lead-textarea" name="desafio" placeholder="Ex.: internet instável, equipe parada esperando suporte, computadores travando, falta de rotina preventiva..." minlength="12" required aria-describedby="lead-desafio-error"></textarea>
-                                <span id="lead-desafio-error" class="lead-error" data-error-for="desafio" aria-live="polite"></span>
-                            </label>
-
-                            <button type="submit" class="lead-submit mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-6 py-4 font-semibold text-white shadow-lg shadow-emerald-950/40 transition hover:scale-[1.01]">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                Enviar diagnóstico pelo WhatsApp
-                            </button>
-                        </form>
-
-                        <p class="mt-4 text-xs leading-6 text-slate-400">
-                            Se preferir, você também pode falar direto pelo <a class="text-sky-300 hover:text-sky-200" href="https://wa.me/5519986093543">WhatsApp</a> ou pelo e-mail <a class="text-sky-300 hover:text-sky-200" href="mailto:samsolution.150824@gmail.com">samsolution.150824@gmail.com</a>.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                    <div class="metric-card rounded-[28px] p-5">
-                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Monitoramento</p>
-                        <p class="mt-5 text-4xl font-bold text-sky-300">24/7</p>
-                        <p class="mt-3 text-sm text-slate-300">Visibilidade contínua para agir rápido diante de incidentes e gargalos.</p>
-                    </div>
-                    <div class="metric-card rounded-[28px] p-5">
-                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Cobertura</p>
-                        <p class="mt-5 text-4xl font-bold text-sky-300">6 frentes</p>
-                        <p class="mt-3 text-sm text-slate-300">Chamados, SLA, tickets críticos, segurança, monitoramento e escopo comercial.</p>
-                    </div>
-                    <div class="metric-card rounded-[28px] p-5">
-                        <p class="text-xs uppercase tracking-[0.28em] text-sky-200">Benefício</p>
-                        <p class="mt-5 text-sm leading-7 text-slate-300">Menos surpresa, mais previsibilidade e mais controle para a empresa tomar decisão sem apagar incêndio.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="fade-up mt-14 text-center">
-                <p class="text-sky-300 mb-3 uppercase tracking-[0.38em] text-xs md:text-sm">As dores que mais param uma empresa</p>
-                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5 max-w-5xl mx-auto">
-                    Problemas simples de TI viram prejuízo rápido.
-                </h2>
-                <p class="text-slate-300 max-w-4xl mx-auto mb-9 text-base md:text-lg leading-8">
-                    Quando o computador trava, a internet cai ou o sistema sai do ar, a empresa perde produtividade, atrasa entregas e muitas vezes deixa dinheiro na mesa. O custo da falha quase sempre é maior do que o custo de prevenir.
-                </p>
-
-                <div class="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left text-sm">
-                    <div class="metric-card rounded-2xl p-5 border border-slate-800">
-                        <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Computador travando</p>
-                        <p class="text-slate-200">Tarefas simples demoram mais, o time perde ritmo e o atendimento fica lento.</p>
-                    </div>
-                    <div class="metric-card rounded-2xl p-5 border border-slate-800">
-                        <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Internet instável</p>
-                        <p class="text-slate-200">Chamadas caem, sistemas oscilam e a operação perde velocidade.</p>
-                    </div>
-                    <div class="metric-card rounded-2xl p-5 border border-slate-800">
-                        <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Sistema fora do ar</p>
-                        <p class="text-slate-200">Financeiro, vendas e rotina interna param justamente quando a empresa mais precisa.</p>
-                    </div>
-                    <div class="metric-card rounded-2xl p-5 border border-slate-800">
-                        <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Equipe esperando suporte</p>
-                        <p class="text-slate-200">Horas improdutivas se acumulam e o dono acaba apagando incêndio no lugar de crescer.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="max-w-3xl mx-auto text-center fade-up mb-14">
-                <p class="text-sky-300 mb-3 uppercase tracking-[0.32em] text-xs">Como ajudamos</p>
-                <h2 class="text-3xl md:text-4xl font-bold mb-5">Cuidamos da tecnologia para sua empresa produzir mais e parar menos.</h2>
-                <p class="text-slate-300 text-base md:text-lg leading-8">
-                    Com a SAM Solution, sua empresa conta com suporte técnico, monitoramento, manutenção preventiva, segurança dos dados e acompanhamento contínuo por um valor fixo mensal.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Suporte técnico</p>
-                    <h3 class="text-xl font-semibold mb-2">Sua equipe volta a produzir mais rápido</h3>
-                    <p class="text-gray-400 text-sm leading-7">
-                        Atendemos dúvidas, erros e travamentos do dia a dia para que ninguém fique parado esperando ajuda.
-                    </p>
-                </div>
-
-                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Manutenção preventiva</p>
-                    <h3 class="text-xl font-semibold mb-2">Computadores revisados antes de dar problema</h3>
-                    <p class="text-gray-400 text-sm leading-7">
-                        Acompanhamos equipamentos, atualizações e rotina de manutenção para evitar falhas recorrentes.
-                    </p>
-                </div>
-
-                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Backup e segurança</p>
-                    <h3 class="text-xl font-semibold mb-2">Seus dados protegidos contra perda e sustos</h3>
-                    <p class="text-gray-400 text-sm leading-7">
-                        Organizamos backup, acesso e recuperação para reduzir risco de prejuízo quando algo sai do controle.
-                    </p>
-                </div>
-
-                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Rede e internet</p>
-                    <h3 class="text-xl font-semibold mb-2">Internet e Wi-Fi mais estáveis para o time</h3>
-                    <p class="text-gray-400 text-sm leading-7">
-                        Corrigimos gargalos de rede e instabilidade que atrasam atendimento, vendas e operação.
-                    </p>
-                </div>
-
-                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Microsoft 365 e nuvem</p>
-                    <h3 class="text-xl font-semibold mb-2">E-mails, arquivos e colaboração funcionando</h3>
-                    <p class="text-gray-400 text-sm leading-7">
-                        Mantemos contas, permissões e ferramentas em ordem para o trabalho continuar fluindo.
-                    </p>
-                </div>
-
-                <div class="bg-gray-900 p-6 rounded-xl hover-glow fade-up border border-slate-800">
-                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Diagnóstico e melhorias</p>
-                    <h3 class="text-xl font-semibold mb-2">Prioridade no que realmente impacta o negócio</h3>
-                    <p class="text-gray-400 text-sm leading-7">
-                        Mostramos onde sua operação perde tempo e o que fazer primeiro para ganhar estabilidade.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 px-4 bg-gray-900/60">
-        <div class="max-w-6xl mx-auto">
-            <p class="text-sky-300 text-center mb-3 uppercase tracking-[0.32em] text-xs fade-up">Planos mensais</p>
-            <h2 class="text-3xl md:text-4xl text-center mb-4 fade-up font-bold">Escolha o acompanhamento certo para o momento da sua empresa</h2>
-            <p class="text-gray-300 text-center max-w-3xl mx-auto mb-12 fade-up text-base md:text-lg leading-8">
-                Mantivemos os planos Essential, Pro e Enterprise, agora explicados de forma simples para mostrar qual resultado cada nível entrega.
+            <p class="mx-auto mt-8 max-w-xl text-lg leading-8 text-slate-700">
+                Manutenção, upgrade e suporte para PCs, notebooks e impressoras. A gente vai até você ou resolve por acesso remoto.
             </p>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 fade-up">
-                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Para sair do improviso</p>
-                    <h3 class="text-xl font-semibold mb-3">Essential</h3>
-                    <p class="text-gray-400 text-sm mb-4 leading-7">Ideal para pequenas empresas que precisam de suporte confiável e rotina preventiva sem complicação.</p>
-                    <ul class="text-sm text-gray-300 space-y-3">
-                        <li>Suporte remoto para resolver travamentos e falhas do dia a dia com agilidade.</li>
-                        <li>Visitas programadas para revisar equipamentos e evitar problemas recorrentes.</li>
-                        <li>Monitoramento básico para enxergar riscos antes que eles virem parada.</li>
-                    </ul>
-                </div>
-
-                <div class="bg-blue-600/20 p-6 rounded-xl border border-blue-500 fade-up shadow-lg shadow-blue-950/20">
-                    <div class="inline-flex rounded-full border border-blue-400/30 bg-blue-500/15 px-3 py-1 text-[0.65rem] uppercase tracking-[0.28em] text-blue-100">Mais procurado</div>
-                    <h3 class="text-xl font-semibold mt-4 mb-3">Pro</h3>
-                    <p class="text-gray-300 text-sm mb-4 leading-7">Para pequenas e médias empresas que querem prevenção contínua e atendimento rápido quando algo sai do normal.</p>
-                    <ul class="text-sm text-gray-200 space-y-3">
-                        <li>Suporte remoto e presencial para manter a equipe produtiva sem depender de improviso.</li>
-                        <li>Backup e continuidade operacional para reduzir prejuízo quando houver falha crítica.</li>
-                        <li>SLA e acompanhamento próximo para que os problemas não se acumulem.</li>
-                    </ul>
-                </div>
-
-                <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 fade-up">
-                    <p class="text-sky-300 text-xs uppercase tracking-[0.24em] mb-3">Para operações críticas</p>
-                    <h3 class="text-xl font-semibold mb-3">Enterprise</h3>
-                    <p class="text-gray-400 text-sm mb-4 leading-7">Para empresas com ambientes mais complexos, maior volume de usuários e impacto alto quando a operação para.</p>
-                    <ul class="text-sm text-gray-300 space-y-3">
-                        <li>Atendimento prioritário para incidentes que afetam áreas-chave do negócio.</li>
-                        <li>Escopo personalizado conforme sistemas, unidades e rotina da operação.</li>
-                        <li>Acompanhamento estratégico para crescer com mais segurança e previsibilidade.</li>
-                    </ul>
-                </div>
+            <div class="mt-9 flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/5519986093543?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SAM%20SOLUTION%20e%20gostaria%20de%20um%20or%C3%A7amento."
+                   onclick="trackClick('whatsapp_hero')"
+                   class="btn inline-flex items-center gap-3 rounded-2xl px-7 py-4 font-bold text-white shadow-lg shadow-indigo-900/20 transition hover:-translate-y-0.5"
+                   style="background: var(--indigo)">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Pedir orçamento sem compromisso
+                </a>
             </div>
         </div>
-    </section>
 
-    <section class="py-24 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="cta-panel fade-up rounded-[32px] p-8 md:p-10 lg:p-12">
-                <div class="grid gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-center">
+        <div class="relative mx-auto mt-14 max-w-5xl overflow-hidden rounded-[32px] border shadow-2xl shadow-indigo-900/25" style="border-color:#2d2d52;background:radial-gradient(70% 90% at 50% 105%,rgba(99,102,241,.5),transparent 70%),radial-gradient(40% 50% at 15% 0%,rgba(34,211,238,.18),transparent 70%),#16161d">
+            <svg viewBox="0 0 900 360" class="block h-auto w-full" role="img" aria-label="Ilustração de um PC gamer com iluminação RGB, um notebook e peças de upgrade">
+                <defs>
+                    <linearGradient id="rgb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset=".5" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+                    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2a52"/><stop offset="1" stop-color="#14141f"/></linearGradient>
+                    <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a46a6"/><stop offset="1" stop-color="#0f0f1a"/></linearGradient>
+                    <g id="fan">
+                        <circle r="36" fill="#0d0d18" stroke="url(#rgb)" stroke-width="4"/>
+                        <circle r="24" fill="none" stroke="url(#rgb)" stroke-width="2" opacity=".5"/>
+                        <path d="M0-20C10-20 12-8 0 0C-12 8-10 20 0 20M-20 0C-20-10-8-12 0 0C8 12 20 10 20 0" stroke="#818cf8" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/>
+                        <circle r="6" fill="#22d3ee"/>
+                    </g>
+                </defs>
+                <ellipse cx="450" cy="330" rx="390" ry="20" fill="#6366f1" opacity=".25"/>
+
+                <rect x="80" y="30" width="220" height="296" rx="20" fill="#1b1b2c" stroke="#3b3b6e" stroke-width="2"/>
+                <rect x="96" y="46" width="188" height="264" rx="12" fill="url(#glass)" stroke="#fff" stroke-opacity=".08"/>
+                <g class="pulse">
+                    <use href="#fan" transform="translate(190 88) scale(.9)"/>
+                    <use href="#fan" transform="translate(190 162) scale(.9)"/>
+                    <use href="#fan" transform="translate(190 236) scale(.9)"/>
+                </g>
+                <rect x="108" y="278" width="164" height="20" rx="6" fill="#0d0d18" stroke="url(#rgb)" stroke-width="2"/>
+                <circle cx="256" cy="288" r="3" fill="#22d3ee"/>
+                <rect x="112" y="326" width="30" height="8" rx="3" fill="#2a2a44"/>
+                <rect x="238" y="326" width="30" height="8" rx="3" fill="#2a2a44"/>
+
+                <g class="pulse">
+                    <rect x="322" y="96" width="110" height="26" rx="4" fill="#1b1b2c" stroke="url(#rgb)" stroke-width="2"/>
+                    <path d="M328 122H426" stroke="#facc15" stroke-width="3" stroke-dasharray="3 3"/>
+                    <text x="377" y="114" fill="#fff" font-family="Quicksand,sans-serif" font-weight="700" font-size="13" text-anchor="middle">RAM</text>
+                    <rect x="332" y="176" width="90" height="56" rx="10" fill="#1b1b2c" stroke="url(#rgb)" stroke-width="2"/>
+                    <circle cx="344" cy="188" r="3" fill="#22d3ee"/>
+                    <text x="377" y="212" fill="#fff" font-family="Quicksand,sans-serif" font-weight="700" font-size="16" text-anchor="middle">SSD</text>
+                </g>
+
+                <rect x="470" y="86" width="320" height="200" rx="14" fill="#10101c" stroke="#3b3b6e" stroke-width="2"/>
+                <rect x="482" y="98" width="296" height="176" rx="8" fill="url(#scr)"/>
+                <rect x="500" y="120" width="90" height="10" rx="5" fill="#fff" opacity=".5"/>
+                <rect x="500" y="138" width="60" height="8" rx="4" fill="#fff" opacity=".25"/>
+                <rect x="698" y="118" width="62" height="28" rx="8" fill="#fff" opacity=".12"/>
+                <path d="M500 242L560 206L610 224L670 162L760 182" stroke="url(#rgb)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M440 286H820L806 306H454Z" fill="#2a2a44"/>
+                <rect x="590" y="286" width="80" height="6" rx="3" fill="#1b1b2c"/>
+            </svg>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 border-t px-6 py-4 text-sm font-bold text-white/80" style="border-color:#2d2d52">
+                <span><i class="fa-solid fa-desktop mr-2 text-cyan-300"></i>PC gamer e de escritório</span>
+                <span><i class="fa-solid fa-laptop mr-2 text-cyan-300"></i>Notebooks</span>
+                <span><i class="fa-solid fa-memory mr-2 text-cyan-300"></i>Upgrade de SSD e RAM</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVIÇOS -->
+    <section class="px-4 pb-8" id="servicos">
+        <div class="mx-auto max-w-6xl">
+            <h2 class="mb-8 text-center text-2xl font-bold md:text-3xl">O que a gente resolve</h2>
+
+            <div class="grid gap-6 lg:grid-cols-3">
+                <div class="rounded-[28px] border bg-white/80 p-7" style="border-color: var(--line)">
+                    <div class="mb-5 flex items-center gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-2xl text-xl text-white" style="background: var(--indigo)"><i class="fa-solid fa-desktop"></i></span><h3 class="text-xl font-bold" style="color: var(--indigo)">PCs e notebooks</h3></div>
+                    <ul class="bullets space-y-4 text-lg">
+                        <li>Instalação e manutenção de PC gamer, PC de escritório e notebooks</li>
+                        <li>Formatação e instalação de Windows/Linux</li>
+                        <li>Montagem de PC sob medida</li>
+                        <li>Limpeza em geral</li>
+                    </ul>
+                </div>
+
+                <div class="rounded-[28px] border bg-white/80 p-7" style="border-color: var(--line)">
+                    <div class="mb-5 flex items-center gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-2xl text-xl text-white" style="background: var(--indigo)"><i class="fa-solid fa-microchip"></i></span><h3 class="text-xl font-bold" style="color: var(--indigo)">Upgrade e suporte</h3></div>
+                    <ul class="bullets space-y-4 text-lg">
+                        <li>Atualização de hardware e software</li>
+                        <li>Upgrade de SSD e memória RAM</li>
+                        <li>Troca de pasta térmica</li>
+                        <li>Configuração de impressoras</li>
+                        <li>Suporte remoto</li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col justify-between rounded-[28px] border-2 bg-white p-7" style="border-color: var(--indigo)">
                     <div>
-                        <p class="text-xs uppercase tracking-[0.32em] text-sky-200 mb-3">Diagnóstico gratuito</p>
-                        <h2 class="text-3xl md:text-4xl font-semibold leading-tight">Sua empresa não precisa esperar a próxima falha para organizar a TI.</h2>
-                        <p class="mt-6 max-w-3xl text-base md:text-lg leading-8 text-slate-300">
-                            Solicite um diagnóstico inicial e entenda onde sua operação perde tempo, quais riscos precisam vir primeiro e como estruturar um suporte mais previsível.
-                        </p>
-                        <div class="mt-8 flex flex-wrap gap-4">
-                            <a href="https://wa.me/5519986093543"
-                               onclick="trackClick('cta_whatsapp')"
-                               class="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 px-8 py-4 font-semibold text-white shadow-lg shadow-emerald-950/40 transition hover:scale-105">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                Solicitar diagnóstico gratuito
-                            </a>
-                            <a href="mailto:samsolution.150824@gmail.com"
-                               onclick="trackClick('cta_email')"
-                               class="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-slate-950/55 px-8 py-4 font-semibold text-white transition hover:bg-white/5">
-                                <i class="fa-solid fa-envelope"></i>
-                                Receber contato por e-mail
-                            </a>
-                        </div>
+                        <h3 class="text-xl font-bold">Chama no WhatsApp</h3>
+                        <p class="mt-3 text-lg leading-7 text-slate-700">Conta o que está acontecendo com o seu equipamento e a gente responde com o orçamento.</p>
                     </div>
+                    <div class="mt-8 grid gap-3">
+                        <a href="https://wa.me/5519986093543?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SAM%20SOLUTION%20e%20gostaria%20de%20um%20or%C3%A7amento."
+                           onclick="trackClick('whatsapp_card')"
+                           class="btn inline-flex items-center justify-center gap-3 rounded-2xl px-6 py-4 font-bold text-white transition hover:-translate-y-0.5"
+                           style="background: var(--indigo)">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Abrir conversa
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="grid gap-4 text-left">
-                        <div class="signal-step rounded-[24px] p-5">
-                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">Para quem faz sentido</p>
-                            <p class="mt-3 text-sm leading-7 text-slate-300">Empresas que já sentem impacto com lentidão, quedas, falta de acompanhamento ou equipe parada esperando suporte.</p>
-                        </div>
-                        <div class="signal-step rounded-[24px] p-5">
-                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-sky-300">O que você recebe</p>
-                            <p class="mt-3 text-sm leading-7 text-slate-300">Uma visão prática do cenário atual, prioridades recomendadas e próximos passos para estabilizar a operação.</p>
-                        </div>
-                    </div>
+            <div class="mt-6 grid gap-4 rounded-[22px] px-6 py-5 text-white sm:grid-cols-3" style="background: var(--indigo)">
+                <div class="flex items-center justify-center gap-3 text-lg font-bold">
+                    <i class="fa-solid fa-house text-xl"></i> Atendimento a domicílio
+                </div>
+                <div class="flex items-center justify-center gap-3 text-lg font-bold">
+                    <i class="fa-regular fa-file-lines text-xl"></i> Orçamento sem compromisso
+                </div>
+                <div class="flex items-center justify-center gap-3 text-lg font-bold">
+                    <i class="fa-solid fa-shield-halved text-xl"></i> Garantia no serviço
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 px-4">
-        <div class="max-w-5xl mx-auto text-center fade-up">
-            <p class="text-sky-300 mb-3 uppercase tracking-[0.32em] text-xs">Por que empresas escolhem a SAM SOLUTION</p>
-            <h2 class="text-3xl md:text-4xl mb-4 font-bold">TI que previne em vez de só apagar incêndio</h2>
-            <p class="max-w-3xl mx-auto text-slate-300 text-base md:text-lg leading-8 mb-10">
-                Não esperamos o problema acontecer. Monitoramos, prevenimos e resolvemos antes que sua empresa pare.
+    <!-- FORMULÁRIO -->
+    <section class="px-4 pt-14" id="contato">
+        <div class="mx-auto max-w-3xl rounded-[28px] border-2 bg-white p-6 md:p-10" style="border-color: var(--indigo)">
+            <h2 class="text-2xl font-bold leading-tight md:text-3xl">Peça um retorno técnico sem enrolação.</h2>
+            <p class="mt-3 text-lg leading-8 text-slate-700">
+                Preencha em menos de um minuto. Ao enviar, abrimos o WhatsApp da SAM SOLUTION com sua mensagem pronta para agilizar o atendimento.
             </p>
-            <div class="grid md:grid-cols-3 gap-6 text-left">
-                <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
-                    <h3 class="font-semibold mb-2">Resposta rápida quando algo sai do normal</h3>
-                    <p class="text-sm text-gray-400 leading-7">Atendimento organizado para resolver o que trava a equipe sem deixar chamados esquecidos.</p>
+
+            <form class="mt-8 grid gap-4" data-lead-form data-whatsapp-number="5519986093543" novalidate>
+                <div class="grid gap-4 md:grid-cols-2">
+                    <label class="lead-field">
+                        <span class="lead-label">Nome</span>
+                        <input class="lead-input" type="text" name="nome" placeholder="Seu nome" autocomplete="name" minlength="3" required aria-describedby="lead-nome-error">
+                        <span id="lead-nome-error" class="lead-error" data-error-for="nome" aria-live="polite"></span>
+                    </label>
+                    <label class="lead-field">
+                        <span class="lead-label">Empresa</span>
+                        <input class="lead-input" type="text" name="empresa" placeholder="Nome da empresa" autocomplete="organization" aria-describedby="lead-empresa-error">
+                        <span id="lead-empresa-error" class="lead-error" data-error-for="empresa" aria-live="polite"></span>
+                    </label>
                 </div>
-                <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
-                    <h3 class="font-semibold mb-2">Acompanhamento contínuo para reduzir falhas</h3>
-                    <p class="text-sm text-gray-400 leading-7">Prevenção recorrente para diminuir indisponibilidade e evitar os mesmos problemas toda semana.</p>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                    <label class="lead-field">
+                        <span class="lead-label">WhatsApp</span>
+                        <input class="lead-input" type="tel" name="telefone" placeholder="(19) 99999-9999" inputmode="numeric" autocomplete="tel" maxlength="15" required aria-describedby="lead-telefone-error">
+                        <span id="lead-telefone-error" class="lead-error" data-error-for="telefone" aria-live="polite"></span>
+                    </label>
+                    <label class="lead-field">
+                        <span class="lead-label">E-mail</span>
+                        <input class="lead-input" type="email" name="email" placeholder="voce@empresa.com.br" inputmode="email" autocomplete="email" aria-describedby="lead-email-error">
+                        <span id="lead-email-error" class="lead-error" data-error-for="email" aria-live="polite"></span>
+                    </label>
                 </div>
-                <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
-                    <h3 class="font-semibold mb-2">Parceiro de TI para o crescimento da empresa</h3>
-                    <p class="text-sm text-gray-400 leading-7">Suporte que acompanha o ritmo do negócio e ajuda a tomar decisões com mais segurança.</p>
-                </div>
-            </div>
+
+                <label class="lead-field">
+                    <span class="lead-label">Principal desafio hoje</span>
+                    <textarea class="lead-textarea" name="desafio" placeholder="Ex.: computador lento ou travando, quero trocar para SSD, preciso formatar, impressora sem imprimir..." minlength="12" required aria-describedby="lead-desafio-error"></textarea>
+                    <span id="lead-desafio-error" class="lead-error" data-error-for="desafio" aria-live="polite"></span>
+                </label>
+
+                <button type="submit" class="lead-submit btn mt-2 inline-flex items-center justify-center gap-3 rounded-2xl px-6 py-4 font-bold text-white shadow-lg shadow-indigo-900/20 transition hover:-translate-y-0.5" style="background: var(--indigo)">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Enviar pelo WhatsApp
+                </button>
+            </form>
+
+            <p class="mt-5 text-sm leading-6 text-slate-600">
+                Se preferir, você também pode falar direto pelo <a class="font-bold underline" style="color: var(--indigo)" href="https://wa.me/5519986093543">WhatsApp</a> ou pelo e-mail <a class="font-bold underline" style="color: var(--indigo)" href="mailto:samsolution.150824@gmail.com">samsolution.150824@gmail.com</a>.
+            </p>
         </div>
     </section>
 
-    <footer class="py-12 text-center">
-        <div class="flex justify-center gap-8 mb-6 text-3xl">
-            <a href="https://www.linkedin.com/company/sam-solutions-technology"
-               onclick="trackClick('linkedin')"
-               aria-label="LinkedIn da SAM SOLUTION"
-               class="hover:text-blue-400 transition">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
+    <!-- SEÇÃO E RODAPÉ MANTIDOS -->
+    <div class="mt-16 bg-[#020617] text-white" style="font-family: 'Sora', sans-serif; font-weight: 400;">
+        <section class="py-16 px-4">
+            <div class="max-w-5xl mx-auto text-center fade-up">
+                <p class="text-sky-300 mb-3 uppercase tracking-[0.32em] text-xs">Por que escolher a SAM SOLUTION</p>
+                <h2 class="text-3xl md:text-4xl mb-4 font-bold">Seu PC funcionando bem, sem complicação</h2>
+                <p class="max-w-3xl mx-auto text-slate-300 text-base md:text-lg leading-8 mb-10">
+                    Cuidamos do seu computador, notebook e impressora com capricho, para você voltar a trabalhar, estudar ou jogar sem preocupação.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
+                        <h3 class="font-semibold mb-2">Atendimento a domicílio</h3>
+                        <p class="text-sm text-gray-400 leading-7">Vamos até a sua casa ou empresa. Quando dá para resolver à distância, o suporte remoto poupa o seu tempo.</p>
+                    </div>
+                    <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
+                        <h3 class="font-semibold mb-2">Orçamento sem compromisso</h3>
+                        <p class="text-sm text-gray-400 leading-7">Conte o problema e a gente diz o que precisa ser feito e quanto custa, antes de você decidir qualquer coisa.</p>
+                    </div>
+                    <div class="bg-gray-900 p-5 rounded-xl border border-gray-800">
+                        <h3 class="font-semibold mb-2">Garantia no serviço</h3>
+                        <p class="text-sm text-gray-400 leading-7">Todo serviço tem garantia, para você ter tranquilidade depois que a gente vai embora.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <a href="https://www.instagram.com/samsolution9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-               onclick="trackClick('instagram')"
-               aria-label="Instagram da SAM SOLUTION"
-               class="hover:text-blue-400 transition">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+        <footer class="py-12 text-center">
+            <div class="flex justify-center gap-8 mb-6 text-3xl">
+                <a href="https://www.linkedin.com/company/sam-solutions-technology"
+                   onclick="trackClick('linkedin')"
+                   aria-label="LinkedIn da SAM SOLUTION"
+                   class="hover:text-blue-400 transition">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
 
-            <a href="https://wa.me/5519986093543"
-               onclick="trackClick('whatsapp_footer')"
-               aria-label="WhatsApp da SAM SOLUTION"
-               class="hover:text-green-400 transition">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
+                <a href="https://www.instagram.com/samsolution9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                   onclick="trackClick('instagram')"
+                   aria-label="Instagram da SAM SOLUTION"
+                   class="hover:text-blue-400 transition">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
 
-            <a href="mailto:samsolution.150824@gmail.com"
-               onclick="trackClick('email_footer')"
-               aria-label="E-mail da SAM SOLUTION"
-               class="hover:text-red-400 transition">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-        </div>
+                <a href="https://wa.me/5519986093543"
+                   onclick="trackClick('whatsapp_footer')"
+                   aria-label="WhatsApp da SAM SOLUTION"
+                   class="hover:text-green-400 transition">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
 
-        <p class="text-sm text-gray-500">
-            &copy; <span id="ano"></span> SAM SOLUTION
-        </p>
-        <p class="text-xs text-gray-600 mt-2">
-            Suporte preventivo de TI para pequenas e médias empresas em Vinhedo e região
-        </p>
-    </footer>
+                <a href="mailto:samsolution.150824@gmail.com"
+                   onclick="trackClick('email_footer')"
+                   aria-label="E-mail da SAM SOLUTION"
+                   class="hover:text-red-400 transition">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+
+            <p class="text-sm text-gray-500">
+                &copy; <span id="ano"></span> SAM SOLUTION
+            </p>
+            <p class="text-xs text-gray-600 mt-2">
+                Soluções em tecnologias: atendimento a domicílio, orçamento sem compromisso e garantia no serviço
+            </p>
+        </footer>
+    </div>
 
     <script>
         const elements = document.querySelectorAll('.fade-up');
@@ -629,7 +456,6 @@
         elements.forEach(el => observer.observe(el));
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
-
     <script>
         (() => {
             const leadForms = Array.from(document.querySelectorAll('[data-lead-form]'));
@@ -703,7 +529,7 @@
                         return '';
                     case 'desafio':
                         if (value.length < 12) {
-                            return 'Descreva rapidamente o principal desafio da sua empresa.';
+                            return 'Descreva rapidamente o que você precisa resolver.';
                         }
                         return '';
                     default:
@@ -773,7 +599,7 @@
                     const submitButton = form.querySelector('button[type="submit"]');
 
                     const messageLines = [
-                        'Olá, vim pelo site da SAM SOLUTION e gostaria de solicitar um diagnóstico de TI.',
+                        'Olá, vim pelo site da SAM SOLUTION e gostaria de pedir um orçamento.',
                         '',
                         `Nome: ${nome || 'Não informado'}`,
                         `Empresa: ${empresa || 'Não informado'}`,
